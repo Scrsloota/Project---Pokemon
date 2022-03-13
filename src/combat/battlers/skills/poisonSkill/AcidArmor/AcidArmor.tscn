@@ -1,0 +1,46 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://assets/battle/skill/poison/acid2.png" type="Texture" id=1]
+[ext_resource path="res://src/combat/battlers/skills/poisonSkill/AcidArmor/AcidArmor.gd" type="Script" id=2]
+
+[sub_resource type="Animation" id=1]
+resource_name = "armor"
+tracks/0/type = "value"
+tracks/0/path = NodePath("acid/Sprite:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 2, 2 ), Vector2( 2, 2 ), Vector2( 2.2, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("acid/Sprite:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.3, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+
+[node name="acidArmor" type="Position2D"]
+script = ExtResource( 2 )
+
+[node name="acid" type="Node2D" parent="."]
+scale = Vector2( 16, 16 )
+
+[node name="Sprite" type="Sprite" parent="acid"]
+position = Vector2( 31.7911, 50.4085 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 1 )
+offset = Vector2( 0.0416302, -6.8532 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/armor = SubResource( 1 )

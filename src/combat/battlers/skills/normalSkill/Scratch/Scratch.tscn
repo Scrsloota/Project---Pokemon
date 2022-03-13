@@ -1,0 +1,114 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://src/combat/battlers/skills/normalSkill/Scratch/Scratch.gd" type="Script" id=1]
+[ext_resource path="res://assets/battle/skill/Normal/scratch.png" type="Texture" id=2]
+
+[sub_resource type="Animation" id=1]
+resource_name = "scratch"
+length = 0.4
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath("scratch/s:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.05, 0.1, 0.15 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 2, 1, 0, 2 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("scratch/s:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ -20.0, 30.0, -20.0 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("scratch/s2:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0.1, 0.15, 0.2, 0.25 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 2, 1, 0, 2 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("scratch/s2:rotation_degrees")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ 160.0, 130.0, 160.0 ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("scratch/s:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 0.15 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("scratch/s2:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0.1, 0.25 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+
+[node name="scratch" type="Position2D"]
+script = ExtResource( 1 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/scratch = SubResource( 1 )
+
+[node name="scratch" type="Node2D" parent="."]
+position = Vector2( -570, -1322.28 )
+scale = Vector2( 10, 12 )
+
+[node name="s2" type="Sprite" parent="scratch"]
+visible = false
+position = Vector2( 215.275, 138.344 )
+rotation = 2.79253
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 2 )
+centered = false
+flip_h = true
+flip_v = true
+hframes = 3
+frame = 2
+
+[node name="s" type="Sprite" parent="scratch"]
+visible = false
+position = Vector2( 192.888, 110.753 )
+rotation = -0.349066
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 2 )
+centered = false
+flip_h = true
+hframes = 3
+frame = 2

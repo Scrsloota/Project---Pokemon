@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://assets/map/buildings/linen_buildings/LinenLibarary (3).png" type="Texture" id=1]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 93, 38.5 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 26.5, 15 )
+
+[node name="StaticBody2D" type="StaticBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 94, 51.5 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2( 93.5, 104 )
+shape = SubResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 94, 58 )
+scale = Vector2( 0.528409, 0.479339 )
+texture = ExtResource( 1 )

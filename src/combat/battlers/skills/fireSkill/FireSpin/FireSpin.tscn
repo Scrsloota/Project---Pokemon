@@ -1,0 +1,279 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://src/combat/battlers/skills/fireSkill/FireSpin/FireSpin.gd" type="Script" id=1]
+[ext_resource path="res://assets/battle/skill/FlameThrown/fires.png" type="Texture" id=2]
+
+[sub_resource type="Animation" id=4]
+resource_name = "fired"
+length = 0.8
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath("fires/fire:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 0, 1, 2, 3, 0, 1, 2, 3, 0, 1, 2, 3, 0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("fires/fire2:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.05, 0.15, 0.25, 0.35, 0.45, 0.55, 0.65, 0.75, 0.85, 0.95, 1.05, 1.15, 1.25, 1.35, 1.45, 1.55 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 3, 0, 2, 1, 3, 0, 2, 1, 3, 0, 2, 1, 3, 0, 2, 1 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("fires/fire3:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0.05, 0.15, 0.25, 0.35, 0.45, 0.55, 0.65, 0.75, 0.85, 0.95, 1.05, 1.15, 1.25, 1.35, 1.45, 1.55 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 3, 2, 1, 0, 3, 2, 1, 0, 3, 2, 1, 0, 3, 2, 1 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("fires/fire4:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 3, 1, 2, 0, 3, 1, 2, 0, 3, 1, 2, 0, 3, 1, 2, 0 ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("fires/fire5:frame")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 0, 1, 2, 3, 0, 1, 2, 3, 0, 1, 2, 3, 0 ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("fires/fire6:frame")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0.05, 0.15, 0.25, 0.35, 0.45, 0.55, 0.65, 0.75, 0.85, 0.95, 1.05, 1.15, 1.25, 1.35, 1.45, 1.55 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 3, 2, 1, 0, 3, 2, 1, 0, 3, 2, 1, 0, 3, 2, 1, 0 ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("fires/fire7:frame")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 2, 3, 0, 1, 2, 3, 0, 1, 2, 3, 0, 1, 2, 3, 0, 1, 2 ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("fires/fire8:frame")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0.05, 0.15, 0.25, 0.35, 0.45, 0.55, 0.65, 0.75, 0.85, 0.95, 1.05, 1.15, 1.25, 1.35, 1.45, 1.55 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 3, 1, 2, 0, 3, 1, 2, 0, 3, 1, 2, 0, 3, 1, 2 ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("fires/fire:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.301307, 0.35, 0.4, 0.45, 0.451307, 0.5, 0.55, 0.6, 0.65, 0.7, 0.75, 0.8, 0.85, 0.9, 1.15, 1.2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 191.543, 102.008 ), Vector2( 213.039, 109.079 ), Vector2( 230.439, 103.679 ), Vector2( 203.039, 95.2791 ), Vector2( 191.543, 102.008 ), Vector2( 213.039, 109.079 ), Vector2( 230.439, 103.679 ), Vector2( 203.039, 95.2791 ), Vector2( 191.543, 102.008 ), Vector2( 213.039, 109.079 ), Vector2( 213.039, 109.079 ), Vector2( 230.439, 103.679 ), Vector2( 191.543, 102.008 ), Vector2( 213.039, 109.079 ), Vector2( 230.439, 103.679 ), Vector2( 203.039, 95.2791 ), Vector2( 191.543, 102.008 ), Vector2( 213.039, 109.079 ), Vector2( 230.439, 103.679 ), Vector2( 203.039, 95.2791 ), Vector2( 213.039, 109.079 ), Vector2( 213.039, 109.079 ) ]
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("fires/fire2:position")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4, 0.45, 0.5, 0.55, 0.600809, 0.65, 0.698957, 0.752163, 0.8, 0.85, 0.9, 1.04428, 1.04896, 1.24428 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 224.952, 89.0899 ), Vector2( 201.193, 84.3987 ), Vector2( 194.122, 90.7869 ), Vector2( 214.487, 94.0296 ), Vector2( 224.952, 89.0899 ), Vector2( 201.193, 84.3987 ), Vector2( 194.122, 90.7869 ), Vector2( 214.487, 94.0296 ), Vector2( 224.952, 89.0899 ), Vector2( 201.193, 84.3987 ), Vector2( 194.122, 90.7869 ), Vector2( 214.487, 94.0296 ), Vector2( 224.952, 89.0899 ), Vector2( 201.193, 84.3987 ), Vector2( 194.122, 90.7869 ), Vector2( 214.487, 94.0296 ), Vector2( 224.952, 89.0899 ), Vector2( 201.193, 84.3987 ), Vector2( 194.122, 90.7869 ), Vector2( 201.193, 84.3987 ), Vector2( 224.952, 89.0899 ), Vector2( 224.952, 89.0899 ) ]
+}
+tracks/10/type = "value"
+tracks/10/path = NodePath("fires/fire3:position")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"times": PoolRealArray( 0, 0.05, 0.101021, 0.15, 0.2, 0.251021, 0.297221, 0.35, 0.400381, 0.45, 0.5, 0.55, 0.6, 0.65, 0.7, 0.75, 0.8, 0.852021 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 204.907, 87.3081 ), Vector2( 195.307, 91.1081 ), Vector2( 221.107, 95.1081 ), Vector2( 226.507, 92.5081 ), Vector2( 204.907, 87.3081 ), Vector2( 195.307, 91.1081 ), Vector2( 221.107, 95.1081 ), Vector2( 226.507, 92.5081 ), Vector2( 204.907, 87.3081 ), Vector2( 195.307, 91.1081 ), Vector2( 221.107, 95.1081 ), Vector2( 226.507, 92.5081 ), Vector2( 204.907, 87.3081 ), Vector2( 195.307, 91.1081 ), Vector2( 221.107, 95.1081 ), Vector2( 226.507, 92.5081 ), Vector2( 204.907, 87.3081 ), Vector2( 195.307, 91.1081 ) ]
+}
+tracks/11/type = "value"
+tracks/11/path = NodePath("fires/fire4:position")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/keys = {
+"times": PoolRealArray( 0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4, 0.45, 0.5, 0.55, 0.6, 0.65, 0.7, 0.75, 0.8 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 214.261, 109.629 ), Vector2( 228.461, 104.029 ), Vector2( 199.461, 97.229 ), Vector2( 193.661, 102.629 ), Vector2( 214.261, 109.629 ), Vector2( 228.461, 104.029 ), Vector2( 199.461, 97.229 ), Vector2( 193.661, 102.629 ), Vector2( 214.261, 109.629 ), Vector2( 228.461, 104.029 ), Vector2( 199.461, 97.229 ), Vector2( 193.661, 102.629 ), Vector2( 214.261, 109.629 ), Vector2( 228.461, 104.029 ), Vector2( 199.461, 97.229 ), Vector2( 193.661, 102.629 ), Vector2( 214.261, 109.629 ) ]
+}
+tracks/12/type = "value"
+tracks/12/path = NodePath("fires/fire5:position")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/keys = {
+"times": PoolRealArray( 0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4, 0.45, 0.5, 0.55, 0.6, 0.65, 0.7, 0.75, 0.8 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 205.352, 119.38 ), Vector2( 216.952, 120.98 ), Vector2( 221.952, 118.38 ), Vector2( 206.152, 115.38 ), Vector2( 205.352, 119.38 ), Vector2( 216.952, 120.98 ), Vector2( 221.952, 118.38 ), Vector2( 206.152, 115.38 ), Vector2( 205.352, 119.38 ), Vector2( 216.952, 120.98 ), Vector2( 221.952, 118.38 ), Vector2( 206.152, 115.38 ), Vector2( 205.352, 119.38 ), Vector2( 216.952, 120.98 ), Vector2( 221.952, 118.38 ), Vector2( 206.152, 115.38 ), Vector2( 205.352, 119.38 ) ]
+}
+tracks/13/type = "value"
+tracks/13/path = NodePath("fires/fire6:position")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/keys = {
+"times": PoolRealArray( 0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4, 0.45, 0.5, 0.55, 0.6, 0.65, 0.7, 0.75, 0.8 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 205.749, 103.561 ), Vector2( 217.549, 105.161 ), Vector2( 222.749, 100.761 ), Vector2( 207.949, 97.761 ), Vector2( 205.749, 103.561 ), Vector2( 217.549, 105.161 ), Vector2( 222.749, 100.761 ), Vector2( 207.949, 97.761 ), Vector2( 205.749, 103.561 ), Vector2( 217.549, 105.161 ), Vector2( 222.749, 100.761 ), Vector2( 207.949, 97.761 ), Vector2( 205.749, 103.561 ), Vector2( 217.549, 105.161 ), Vector2( 222.749, 100.761 ), Vector2( 207.949, 97.761 ), Vector2( 205.749, 103.561 ) ]
+}
+tracks/14/type = "value"
+tracks/14/path = NodePath("fires/fire7:position")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/keys = {
+"times": PoolRealArray( 0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4, 0.45, 0.5, 0.55, 0.6, 0.65, 0.7, 0.75, 0.8 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 228.516, 98.4443 ), Vector2( 198.916, 95.0443 ), Vector2( 192.716, 100.644 ), Vector2( 219.716, 104.644 ), Vector2( 228.516, 98.4443 ), Vector2( 198.916, 95.0443 ), Vector2( 192.716, 100.644 ), Vector2( 219.716, 104.644 ), Vector2( 228.516, 98.4443 ), Vector2( 198.916, 95.0443 ), Vector2( 192.716, 100.644 ), Vector2( 219.716, 104.644 ), Vector2( 228.516, 98.4443 ), Vector2( 198.916, 95.0443 ), Vector2( 192.716, 100.644 ), Vector2( 219.716, 104.644 ), Vector2( 228.516, 98.4443 ) ]
+}
+tracks/15/type = "value"
+tracks/15/path = NodePath("fires/fire8:position")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/keys = {
+"times": PoolRealArray( 0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4, 0.45, 0.5, 0.55, 0.6, 0.65, 0.7, 0.75, 0.8 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 228.215, 114.601 ), Vector2( 202.415, 111.601 ), Vector2( 198.415, 113.801 ), Vector2( 220.815, 115.001 ), Vector2( 228.215, 114.601 ), Vector2( 202.415, 111.601 ), Vector2( 198.415, 113.801 ), Vector2( 220.815, 115.001 ), Vector2( 228.215, 114.601 ), Vector2( 202.415, 111.601 ), Vector2( 198.415, 113.801 ), Vector2( 220.815, 115.001 ), Vector2( 228.215, 114.601 ), Vector2( 202.415, 111.601 ), Vector2( 198.415, 113.801 ), Vector2( 220.815, 115.001 ), Vector2( 228.215, 114.601 ) ]
+}
+tracks/16/type = "value"
+tracks/16/path = NodePath("fires:position")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/keys = {
+"times": PoolRealArray( 0, 0.4, 0.8 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( -253.533, -615.938 ), Vector2( -253.533, -615.938 ), Vector2( -253.533, -1050 ) ]
+}
+tracks/17/type = "value"
+tracks/17/path = NodePath("fires:visible")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/keys = {
+"times": PoolRealArray( 0, 0.8 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+
+[node name="fireSpin" type="Position2D"]
+script = ExtResource( 1 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/fired = SubResource( 4 )
+
+[node name="fires" type="Node2D" parent="."]
+position = Vector2( -253.533, -615.938 )
+scale = Vector2( 8, 8 )
+
+[node name="fire" type="Sprite" parent="fires"]
+position = Vector2( 191.543, 102.008 )
+texture = ExtResource( 2 )
+hframes = 4
+
+[node name="fire2" type="Sprite" parent="fires"]
+position = Vector2( 224.952, 89.0899 )
+texture = ExtResource( 2 )
+hframes = 4
+frame = 1
+
+[node name="fire3" type="Sprite" parent="fires"]
+position = Vector2( 204.907, 87.3081 )
+texture = ExtResource( 2 )
+hframes = 4
+frame = 1
+
+[node name="fire4" type="Sprite" parent="fires"]
+position = Vector2( 214.261, 109.629 )
+texture = ExtResource( 2 )
+hframes = 4
+
+[node name="fire5" type="Sprite" parent="fires"]
+position = Vector2( 205.352, 119.38 )
+texture = ExtResource( 2 )
+hframes = 4
+
+[node name="fire6" type="Sprite" parent="fires"]
+position = Vector2( 205.749, 103.561 )
+texture = ExtResource( 2 )
+hframes = 4
+
+[node name="fire7" type="Sprite" parent="fires"]
+position = Vector2( 228.516, 98.4443 )
+texture = ExtResource( 2 )
+hframes = 4
+frame = 2
+
+[node name="fire8" type="Sprite" parent="fires"]
+position = Vector2( 228.215, 114.601 )
+texture = ExtResource( 2 )
+hframes = 4
+frame = 2

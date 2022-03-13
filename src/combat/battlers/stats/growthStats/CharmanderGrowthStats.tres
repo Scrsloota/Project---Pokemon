@@ -1,0 +1,20 @@
+[gd_resource type="Resource" load_steps=10 format=2]
+
+[ext_resource path="res://src/combat/battlers/stats/growthStats/GrowthStats.gd" type="Script" id=1]
+[ext_resource path="res://src/combat/battlers/stats/level/VeryFast.tres" type="Resource" id=2]
+[ext_resource path="res://assets/pokemon/Charmander.png" type="Texture" id=3]
+[ext_resource path="res://src/combat/battlers/skills/normalSkill/Scratch.tres" type="Resource" id=4]
+[ext_resource path="res://src/combat/battlers/skills/fireSkill/FlameThrower.tres" type="Resource" id=5]
+[ext_resource path="res://src/combat/battlers/skills/fireSkill/Ember.tres" type="Resource" id=6]
+[ext_resource path="res://src/combat/battlers/skills/fireSkill/FireSpin.tres" type="Resource" id=7]
+[ext_resource path="res://src/combat/battlers/skills/normalSkill/Growl.tres" type="Resource" id=8]
+[ext_resource path="res://src/combat/battlers/skills/normalSkill/Leer.tres" type="Resource" id=9]
+
+[resource]
+script = ExtResource( 1 )
+level_array = ExtResource( 2 )
+species_strength = [ 39, 52, 43, 60, 50, 65 ]
+primary_type = 9
+secondary_type = 18
+icon = ExtResource( 3 )
+can_learn_skills = [ ExtResource( 4 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 5 ) ]

@@ -1,0 +1,231 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://assets/item/84.png" type="Texture" id=1]
+[ext_resource path="res://assets/fonts/pokemon fonts/Pokemon-FRLG.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://assets/ui/ui_arrow_left_right.png" type="Texture" id=3]
+[ext_resource path="res://assets/ui/miscellaneous/sell_menu.png" type="Texture" id=5]
+[ext_resource path="res://assets/ui/miscellaneous/thank.png" type="Texture" id=6]
+[ext_resource path="res://src/map/pawns/PawnAnim.tscn" type="PackedScene" id=8]
+[ext_resource path="res://src/items/interface/transaction/sell/SellItems.gd" type="Script" id=12]
+[ext_resource path="res://src/items/interface/transaction/SelectArrow.tscn" type="PackedScene" id=14]
+
+[sub_resource type="DynamicFont" id=3]
+size = 58
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=1]
+size = 63
+extra_spacing_bottom = 30
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 50
+font_data = ExtResource( 2 )
+
+[node name="SellItem" type="CanvasLayer"]
+script = ExtResource( 12 )
+
+[node name="Control" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Timer" type="Timer" parent="Control"]
+one_shot = true
+
+[node name="Background" type="TextureRect" parent="Control"]
+margin_left = 35.0
+margin_top = -13.0
+margin_right = 1133.0
+margin_bottom = 750.0
+texture = ExtResource( 5 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Control"]
+margin_left = 46.0
+margin_top = 379.0
+margin_right = 589.0
+margin_bottom = 471.0
+custom_colors/font_color = Color( 0.2, 0.2, 0.2, 1 )
+custom_fonts/font = SubResource( 3 )
+text = "Sell  List"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Description" type="Label" parent="Control"]
+margin_left = 206.0
+margin_top = 494.0
+margin_right = 509.0
+margin_bottom = 746.0
+custom_colors/font_color = Color( 0.101961, 0.0431373, 0.0431373, 1 )
+custom_fonts/font = SubResource( 1 )
+text = "Bag:
+A detail description"
+autowrap = true
+clip_text = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SelectArrow" parent="Control" instance=ExtResource( 14 )]
+margin_left = 597.0
+margin_top = 100.0
+margin_right = 597.0
+margin_bottom = 100.0
+
+[node name="Sprite" parent="Control/SelectArrow" index="0"]
+position = Vector2( -6.00741, 0 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 3 )
+
+[node name="Items" type="Control" parent="Control"]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Name" type="Label" parent="Control/Items"]
+anchor_top = 0.0555556
+anchor_bottom = 0.0555556
+margin_left = 633.0
+margin_top = 77.7778
+margin_right = 1647.0
+margin_bottom = 149.778
+size_flags_horizontal = 3
+size_flags_vertical = 1
+custom_colors/font_color = Color( 0.2, 0.2, 0.2, 1 )
+custom_fonts/font = SubResource( 2 )
+text = "To be filled"
+max_lines_visible = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Name2" type="Label" parent="Control/Items"]
+anchor_top = 0.0555556
+anchor_bottom = 0.0555556
+margin_left = 635.0
+margin_top = 167.778
+margin_right = 1649.0
+margin_bottom = 239.778
+size_flags_horizontal = 3
+size_flags_vertical = 1
+custom_colors/font_color = Color( 0.2, 0.2, 0.2, 1 )
+custom_fonts/font = SubResource( 2 )
+text = "To be filled"
+max_lines_visible = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Name3" type="Label" parent="Control/Items"]
+anchor_top = 0.0555556
+anchor_bottom = 0.0555556
+margin_left = 635.0
+margin_top = 257.778
+margin_right = 1649.0
+margin_bottom = 329.778
+size_flags_horizontal = 3
+size_flags_vertical = 1
+custom_colors/font_color = Color( 0.2, 0.2, 0.2, 1 )
+custom_fonts/font = SubResource( 2 )
+text = "To be filled"
+max_lines_visible = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Name4" type="Label" parent="Control/Items"]
+anchor_top = 0.0555556
+anchor_bottom = 0.0555556
+margin_left = 635.0
+margin_top = 347.778
+margin_right = 1649.0
+margin_bottom = 419.778
+size_flags_horizontal = 3
+size_flags_vertical = 1
+custom_colors/font_color = Color( 0.2, 0.2, 0.2, 1 )
+custom_fonts/font = SubResource( 2 )
+text = "To be filled"
+max_lines_visible = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Name5" type="Label" parent="Control/Items"]
+anchor_top = 0.0555556
+anchor_bottom = 0.0555556
+margin_left = 635.0
+margin_top = 437.778
+margin_right = 1649.0
+margin_bottom = 509.778
+size_flags_horizontal = 3
+size_flags_vertical = 1
+custom_colors/font_color = Color( 0.2, 0.2, 0.2, 1 )
+custom_fonts/font = SubResource( 2 )
+text = "To be filled"
+max_lines_visible = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Name6" type="Label" parent="Control/Items"]
+anchor_top = 0.0555556
+anchor_bottom = 0.0555556
+margin_left = 635.0
+margin_top = 527.778
+margin_right = 1649.0
+margin_bottom = 599.778
+size_flags_horizontal = 3
+size_flags_vertical = 1
+custom_colors/font_color = Color( 0.2, 0.2, 0.2, 1 )
+custom_fonts/font = SubResource( 2 )
+text = "To be filled"
+max_lines_visible = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Name7" type="Label" parent="Control/Items"]
+anchor_top = 0.0555556
+anchor_bottom = 0.0555556
+margin_left = 635.0
+margin_top = 617.778
+margin_right = 1649.0
+margin_bottom = 689.778
+size_flags_horizontal = 3
+size_flags_vertical = 1
+custom_colors/font_color = Color( 0.2, 0.2, 0.2, 1 )
+custom_fonts/font = SubResource( 2 )
+text = "To be filled"
+max_lines_visible = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Thank" parent="Control" instance=ExtResource( 8 )]
+
+[node name="Body" parent="Control/Thank/Root" index="0"]
+position = Vector2( 815.48, 502.068 )
+scale = Vector2( 6.82333, 6.78758 )
+texture = ExtResource( 6 )
+
+[node name="BigIcon" parent="Control" instance=ExtResource( 8 )]
+scale = Vector2( 2, 2 )
+
+[node name="Body" parent="Control/BigIcon/Root" index="0"]
+position = Vector2( 54.5, 291 )
+scale = Vector2( 3, 3.02142 )
+texture = ExtResource( 1 )
+
+[editable path="Control/SelectArrow"]
+[editable path="Control/Thank"]
+[editable path="Control/BigIcon"]

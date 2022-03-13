@@ -1,0 +1,43 @@
+# Container for all pawns on the map.
+# Sorts pawns by their Y position,
+# Spawns and rebuilds the player's party
+extends YSort
+
+export var party_scene: PackedScene
+const Follower = preload("res://src/map/pawns/PawnFollower.tscn")
+
+var party_members := []
+var party
+
+#生成队伍
+func spawn_party(party: Object, leader) -> void:
+	pass
+#	self.party = party
+#	var pawn_previous = leader
+#	var party_size = min(get_child_count(), party.PARTY_SIZE) - 1
+#	#队伍成员一个个加入
+#	for index in range(party_size):
+#		pawn_previous = spawn_pawn(party.get_child(index), game_board, pawn_previous)
+#		party_members.append(pawn_previous)
+
+#单个成员生成并跟随上一个成员
+# func spawn_pawn(
+# 	party_member: PartyMember, game_board: GameBoard, pawn_previous: Object) -> Object:
+# 	var new_pawn = Follower.instance()
+# 	new_pawn.name = party_member.name
+# 	new_pawn.position = pawn_previous.position
+# 	new_pawn.initialize(game_board)
+# 	if pawn_previous:
+# 		print("0")
+# 		pawn_previous.connect("moved", new_pawn, "_on_target_Pawn_moved")
+# 	add_child(new_pawn)
+# 	new_pawn.change_skin(party_member.get_pawn_anim())
+# 	return new_pawn
+
+#重新生成
+#func rebuild_party() -> void:
+#	var Leader_pos = party_members[0].position
+#	for member in party_members:
+#		member.queue_free()
+#	party_members.clear()
+#	spawn_party(party, Leader_pos)

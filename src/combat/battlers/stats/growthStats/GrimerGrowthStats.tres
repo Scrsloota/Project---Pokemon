@@ -1,0 +1,20 @@
+[gd_resource type="Resource" load_steps=10 format=2]
+
+[ext_resource path="res://src/combat/battlers/stats/growthStats/GrowthStats.gd" type="Script" id=1]
+[ext_resource path="res://src/combat/battlers/stats/level/VeryFast.tres" type="Resource" id=2]
+[ext_resource path="res://assets/pokemon/Grimer.png" type="Texture" id=3]
+[ext_resource path="res://src/combat/battlers/skills/poisonSkill/AcidArmor.tres" type="Resource" id=4]
+[ext_resource path="res://src/combat/battlers/skills/poisonSkill/PoisonGas.tres" type="Resource" id=5]
+[ext_resource path="res://src/combat/battlers/skills/normalSkill/Pound.tres" type="Resource" id=6]
+[ext_resource path="res://src/combat/battlers/skills/normalSkill/Screech.tres" type="Resource" id=7]
+[ext_resource path="res://src/combat/battlers/skills/poisonSkill/Sludge.tres" type="Resource" id=8]
+[ext_resource path="res://src/combat/battlers/skills/normalSkill/Harden.tres" type="Resource" id=9]
+
+[resource]
+script = ExtResource( 1 )
+level_array = ExtResource( 2 )
+species_strength = [ 80, 80, 50, 40, 50, 25 ]
+primary_type = 3
+secondary_type = 18
+icon = ExtResource( 3 )
+can_learn_skills = [ ExtResource( 6 ), ExtResource( 7 ), ExtResource( 9 ), ExtResource( 8 ), ExtResource( 4 ), ExtResource( 5 ) ]

@@ -1,0 +1,92 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://assets/fonts/pokemon fonts/Pokemon-DP-Bold.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://assets/ui/pokemon Battle/hpbar1.png" type="Texture" id=2]
+[ext_resource path="res://assets/ui/pokemon Battle/state.png" type="Texture" id=4]
+[ext_resource path="res://assets/ui/pokemon Battle/gender_icons.png" type="Texture" id=5]
+
+[sub_resource type="DynamicFont" id=1]
+size = 70
+extra_spacing_top = 20
+extra_spacing_bottom = 10
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 60
+extra_spacing_top = 20
+extra_spacing_bottom = 10
+extra_spacing_char = 5
+font_data = ExtResource( 1 )
+
+[sub_resource type="Animation" id=3]
+resource_name = "Hpdown"
+
+[sub_resource type="StyleBoxFlat" id=4]
+bg_color = Color( 0.886275, 0.443137, 0.270588, 1 )
+
+[sub_resource type="StyleBoxEmpty" id=5]
+
+[node name="OppoBar" type="Node2D"]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="AttributeBack" type="Sprite" parent="."]
+position = Vector2( 392, 295.083 )
+scale = Vector2( 6, 5 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( -4, -2, 131, 39 )
+
+[node name="Name" type="Label" parent="."]
+margin_left = 14.0
+margin_top = 220.0
+margin_right = 399.0
+margin_bottom = 305.0
+custom_colors/font_color = Color( 0.313726, 0.313726, 0.313726, 1 )
+custom_fonts/font = SubResource( 1 )
+text = "Charmander"
+clip_text = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Level" type="Label" parent="."]
+margin_left = 524.339
+margin_top = 227.67
+margin_right = 593.339
+margin_bottom = 309.67
+custom_colors/font_color = Color( 0.313726, 0.313726, 0.313726, 1 )
+custom_fonts/font = SubResource( 2 )
+text = "6"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="gender" type="Sprite" parent="."]
+position = Vector2( 428.107, 272.192 )
+scale = Vector2( 6, 6 )
+texture = ExtResource( 5 )
+hframes = 2
+
+[node name="state" type="Sprite" parent="."]
+position = Vector2( 107.853, 336.916 )
+scale = Vector2( 6, 6 )
+texture = ExtResource( 4 )
+vframes = 5
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/Hpdown = SubResource( 3 )
+
+[node name="HP" type="ProgressBar" parent="."]
+margin_left = 318.607
+margin_top = 329.544
+margin_right = 608.607
+margin_bottom = 344.544
+custom_styles/fg = SubResource( 4 )
+custom_styles/bg = SubResource( 5 )
+value = 100.0
+percent_visible = false
+__meta__ = {
+"_edit_use_anchors_": false
+}

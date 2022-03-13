@@ -1,0 +1,48 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://src/map/pawns/RoadGuide.gd" type="Script" id=1]
+[ext_resource path="res://src/map/RoadGuide.tscn" type="PackedScene" id=2]
+[ext_resource path="res://assets/map/road/RoadGuide.png" type="Texture" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 53.5, 50 )
+
+[node name="RoadGuide" type="StaticBody2D"]
+position = Vector2( 203.001, -1164 )
+collision_layer = 2
+collision_mask = 0
+script = ExtResource( 1 )
+sight_distance = 150
+Label_message = "The way to Liyuan !"
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( -6.00097, 30.0001 )
+scale = Vector2( 0.861111, 0.865672 )
+texture = ExtResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 2.49899, 12 )
+shape = SubResource( 1 )
+
+[node name="Control" parent="." instance=ExtResource( 2 )]
+margin_left = -0.000999451
+margin_top = 56.0
+margin_right = 39.999
+margin_bottom = 96.0
+
+[node name="Raycasts" type="Node2D" parent="."]
+
+[node name="Up" type="RayCast2D" parent="Raycasts"]
+exclude_parent = false
+cast_to = Vector2( 0, -50 )
+
+[node name="Down" type="RayCast2D" parent="Raycasts"]
+exclude_parent = false
+
+[node name="Left" type="RayCast2D" parent="Raycasts"]
+exclude_parent = false
+cast_to = Vector2( -50, 0 )
+
+[node name="Right" type="RayCast2D" parent="Raycasts"]
+exclude_parent = false
+cast_to = Vector2( 50, 0 )

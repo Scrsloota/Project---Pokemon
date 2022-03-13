@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://src/combat/interface/battle_scenes/Menu.tscn" type="PackedScene" id=1]
+[ext_resource path="res://src/combat/interface/battle_scenes/self_bar.tscn" type="PackedScene" id=2]
+[ext_resource path="res://src/combat/interface/CombatInterface.gd" type="Script" id=3]
+[ext_resource path="res://src/combat/interface/battle_scenes/oppo_bar.tscn" type="PackedScene" id=4]
+
+[node name="CombatInterface" type="CanvasLayer"]
+layer = 40
+script = ExtResource( 3 )
+
+[node name="Menu" parent="." instance=ExtResource( 1 )]
+layer = 101
+
+[node name="SelfBar" parent="." instance=ExtResource( 2 )]
+z_index = 2
+
+[node name="OppoBar" parent="." instance=ExtResource( 4 )]
+z_index = 2
+
+[connection signal="item_selected" from="Menu" to="." method="_on_Menu_item_selected"]
+[connection signal="run_selected" from="Menu" to="." method="_on_Menu_run_selected"]
+[connection signal="skill_selected" from="Menu" to="." method="_on_Menu_skill_selected"]
+[connection signal="switch_pokemon_selected" from="Menu" to="." method="_on_Menu_switch_pokemon_selected"]

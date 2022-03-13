@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Freedom.mp3-050ded7a6dce3acabc1f508c2028605a.mp3str"
+
+[deps]
+
+source_file="res://assets/audio/bgm/Freedom.mp3"
+dest_files=[ "res://.import/Freedom.mp3-050ded7a6dce3acabc1f508c2028605a.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

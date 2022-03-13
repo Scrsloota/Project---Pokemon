@@ -1,0 +1,14 @@
+[gd_resource type="Resource" load_steps=3 format=2]
+
+[ext_resource path="res://src/items/pokemonBall/PokemonBall.gd" type="Script" id=1]
+[ext_resource path="res://assets/item/pokeball2.png" type="Texture" id=2]
+
+[resource]
+script = ExtResource( 1 )
+icon = ExtResource( 2 )
+name = "UltraBall"
+description = "good quality"
+unique = false
+sell_price = 1000
+buy_price = 2000
+success_rate = 0.8

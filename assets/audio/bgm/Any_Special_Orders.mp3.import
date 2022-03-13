@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Any_Special_Orders.mp3-fa9ed7f334ac57d27db8316a26cb286b.mp3str"
+
+[deps]
+
+source_file="res://assets/audio/bgm/Any_Special_Orders.mp3"
+dest_files=[ "res://.import/Any_Special_Orders.mp3-fa9ed7f334ac57d27db8316a26cb286b.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

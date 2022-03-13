@@ -1,0 +1,22 @@
+[gd_resource type="Resource" load_steps=12 format=2]
+
+[ext_resource path="res://src/combat/battlers/stats/growthStats/GrowthStats.gd" type="Script" id=1]
+[ext_resource path="res://src/combat/battlers/stats/level/VeryFast.tres" type="Resource" id=2]
+[ext_resource path="res://assets/pokemon/Bulbasaur.png" type="Texture" id=3]
+[ext_resource path="res://src/combat/battlers/skills/grassSkill/VineWhip.tres" type="Resource" id=4]
+[ext_resource path="res://src/combat/battlers/skills/grassSkill/SleepPowder.tres" type="Resource" id=5]
+[ext_resource path="res://src/combat/battlers/skills/grassSkill/RazorLeaf.tres" type="Resource" id=6]
+[ext_resource path="res://src/combat/battlers/skills/poisonSkill/PoisonPowder.tres" type="Resource" id=7]
+[ext_resource path="res://src/combat/battlers/skills/normalSkill/Tackle.tres" type="Resource" id=8]
+[ext_resource path="res://src/combat/battlers/skills/normalSkill/Growth.tres" type="Resource" id=9]
+[ext_resource path="res://src/combat/battlers/skills/grassSkill/SolarBeam.tres" type="Resource" id=10]
+[ext_resource path="res://src/combat/battlers/skills/normalSkill/Leer.tres" type="Resource" id=11]
+
+[resource]
+script = ExtResource( 1 )
+level_array = ExtResource( 2 )
+species_strength = [ 45, 49, 49, 65, 65, 45 ]
+primary_type = 11
+secondary_type = 3
+icon = ExtResource( 3 )
+can_learn_skills = [ ExtResource( 8 ), ExtResource( 11 ), ExtResource( 4 ), ExtResource( 7 ), ExtResource( 6 ), ExtResource( 9 ), ExtResource( 5 ), ExtResource( 10 ) ]

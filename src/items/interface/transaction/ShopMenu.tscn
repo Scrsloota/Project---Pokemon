@@ -1,0 +1,90 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://assets/ui/menu_box_1.png" type="Texture" id=2]
+[ext_resource path="res://assets/ui/ui_arrow_left_right.png" type="Texture" id=3]
+[ext_resource path="res://assets/ui/pkmnfl.ttf" type="DynamicFontData" id=4]
+
+[sub_resource type="DynamicFont" id=1]
+size = 12
+font_data = ExtResource( 4 )
+
+[node name="ShopMenu" type="CanvasLayer"]
+
+[node name="Control" type="Control" parent="."]
+margin_left = -152.0
+margin_top = -19.0
+margin_right = -112.0
+margin_bottom = 21.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Control"]
+margin_left = 152.0
+margin_top = 20.0
+margin_right = 206.0
+margin_bottom = 82.0
+rect_scale = Vector2( 4, 4 )
+texture = ExtResource( 2 )
+patch_margin_left = 6
+patch_margin_top = 6
+patch_margin_right = 6
+patch_margin_bottom = 6
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/NinePatchRect"]
+anchor_right = 0.463
+margin_left = 20.0
+margin_top = 9.0
+margin_right = 46.328
+margin_bottom = 108.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Control/NinePatchRect/VBoxContainer"]
+margin_right = 51.0
+margin_bottom = 11.0
+rect_min_size = Vector2( 50, 11 )
+custom_colors/default_color = Color( 0.435294, 0.435294, 0.533333, 1 )
+custom_fonts/normal_font = SubResource( 1 )
+text = "BUY"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="Control/NinePatchRect/VBoxContainer"]
+margin_top = 15.0
+margin_right = 51.0
+margin_bottom = 26.0
+rect_min_size = Vector2( 50, 11 )
+custom_colors/default_color = Color( 0.435294, 0.435294, 0.533333, 1 )
+custom_fonts/normal_font = SubResource( 1 )
+text = "SELL"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel3" type="RichTextLabel" parent="Control/NinePatchRect/VBoxContainer"]
+margin_top = 30.0
+margin_right = 51.0
+margin_bottom = 41.0
+rect_min_size = Vector2( 50, 11 )
+custom_colors/default_color = Color( 0.435294, 0.435294, 0.533333, 1 )
+custom_fonts/normal_font = SubResource( 1 )
+text = "EXIT"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="Control/NinePatchRect"]
+margin_left = 7.0
+margin_top = 9.0
+margin_right = 13.0
+margin_bottom = 19.0
+texture = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}

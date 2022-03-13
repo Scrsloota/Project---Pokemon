@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/il_vento_doro.mp3-11b6a7b6aeac495d1d7230eb1d7e68fb.mp3str"
+
+[deps]
+
+source_file="res://assets/audio/bgm/il_vento_doro.mp3"
+dest_files=[ "res://.import/il_vento_doro.mp3-11b6a7b6aeac495d1d7230eb1d7e68fb.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

@@ -1,0 +1,304 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://assets/ui/pkmnfl.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://assets/ui/menu_big.png" type="Texture" id=2]
+[ext_resource path="res://assets/ui/ui_arrow_left_right.png" type="Texture" id=3]
+[ext_resource path="res://src/interface/menus/PokemonMenu.gd" type="Script" id=4]
+[ext_resource path="res://src/interface/menus/MusicSwitcher.tscn" type="PackedScene" id=5]
+[ext_resource path="res://src/interface/pokemon_party_screen/PokemonPartyScreen.tscn" type="PackedScene" id=6]
+[ext_resource path="res://src/interface/bag/Bag.tscn" type="PackedScene" id=7]
+[ext_resource path="res://src/interface/menus/SkillChangeRect.gd" type="Script" id=8]
+[ext_resource path="res://assets/ui/donate1.jpg" type="Texture" id=9]
+
+[sub_resource type="DynamicFont" id=1]
+size = 50
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 50
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFontData" id=3]
+font_path = "res://assets/ui/pkmnfl.ttf"
+
+[sub_resource type="DynamicFont" id=4]
+size = 52
+extra_spacing_top = 17
+extra_spacing_bottom = 17
+font_data = SubResource( 3 )
+
+[node name="Menu" type="CanvasLayer"]
+script = ExtResource( 4 )
+
+[node name="Control" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Control"]
+margin_right = 275.0
+margin_bottom = 380.0
+texture = ExtResource( 2 )
+patch_margin_left = 20
+patch_margin_top = 20
+patch_margin_right = 20
+patch_margin_bottom = 20
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/NinePatchRect"]
+margin_left = 60.0
+margin_top = 24.0
+margin_right = 308.0
+margin_bottom = 358.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Control/NinePatchRect/VBoxContainer"]
+margin_right = 248.0
+margin_bottom = 52.0
+rect_min_size = Vector2( 50, 11 )
+size_flags_vertical = 3
+custom_colors/default_color = Color( 0.435294, 0.435294, 0.533333, 1 )
+custom_fonts/normal_font = SubResource( 1 )
+text = "Pokemon"
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="Control/NinePatchRect/VBoxContainer"]
+margin_top = 56.0
+margin_right = 248.0
+margin_bottom = 108.0
+rect_min_size = Vector2( 50, 11 )
+size_flags_vertical = 3
+custom_colors/default_color = Color( 0.435294, 0.435294, 0.533333, 1 )
+custom_fonts/normal_font = SubResource( 1 )
+text = "Bag"
+
+[node name="RichTextLabel3" type="RichTextLabel" parent="Control/NinePatchRect/VBoxContainer"]
+margin_top = 112.0
+margin_right = 248.0
+margin_bottom = 164.0
+rect_min_size = Vector2( 50, 11 )
+size_flags_vertical = 3
+custom_colors/default_color = Color( 0.435294, 0.435294, 0.533333, 1 )
+custom_fonts/normal_font = SubResource( 1 )
+text = "Authors"
+
+[node name="RichTextLabel4" type="RichTextLabel" parent="Control/NinePatchRect/VBoxContainer"]
+margin_top = 168.0
+margin_right = 248.0
+margin_bottom = 221.0
+rect_min_size = Vector2( 50, 11 )
+size_flags_vertical = 3
+custom_colors/default_color = Color( 0.435294, 0.435294, 0.533333, 1 )
+custom_fonts/normal_font = SubResource( 1 )
+text = "Donate"
+
+[node name="RichTextLabel5" type="RichTextLabel" parent="Control/NinePatchRect/VBoxContainer"]
+margin_top = 225.0
+margin_right = 248.0
+margin_bottom = 277.0
+rect_min_size = Vector2( 50, 11 )
+size_flags_vertical = 3
+custom_colors/default_color = Color( 0.435294, 0.435294, 0.533333, 1 )
+custom_fonts/normal_font = SubResource( 1 )
+text = "Music"
+
+[node name="RichTextLabel6" type="RichTextLabel" parent="Control/NinePatchRect/VBoxContainer"]
+margin_top = 281.0
+margin_right = 248.0
+margin_bottom = 334.0
+rect_min_size = Vector2( 50, 11 )
+size_flags_vertical = 3
+custom_colors/default_color = Color( 0.435294, 0.435294, 0.533333, 1 )
+custom_fonts/normal_font = SubResource( 1 )
+text = "Exit"
+
+[node name="Arrow" type="TextureRect" parent="Control/NinePatchRect"]
+margin_left = 30.0
+margin_top = 27.0
+margin_right = 49.0
+margin_bottom = 55.0
+texture = ExtResource( 3 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MusicSwitcher" parent="." instance=ExtResource( 5 )]
+visible = false
+margin_left = 292.0
+margin_top = 1.0
+margin_right = 332.0
+margin_bottom = 41.0
+
+[node name="PokemonPartyScreen" parent="." instance=ExtResource( 6 )]
+visible = false
+
+[node name="SkillChangeRect" type="NinePatchRect" parent="PokemonPartyScreen"]
+visible = false
+margin_left = 66.0
+margin_top = 523.0
+margin_right = 687.0
+margin_bottom = 854.0
+texture = ExtResource( 2 )
+patch_margin_left = 20
+patch_margin_top = 20
+patch_margin_right = 20
+patch_margin_bottom = 20
+script = ExtResource( 8 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PokemonPartyScreen/SkillChangeRect"]
+margin_left = 60.0
+margin_top = 36.0
+margin_right = 583.0
+margin_bottom = 326.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel" type="RichTextLabel" parent="PokemonPartyScreen/SkillChangeRect/VBoxContainer"]
+margin_right = 523.0
+margin_bottom = 69.0
+rect_min_size = Vector2( 50, 11 )
+size_flags_vertical = 3
+custom_colors/default_color = Color( 0.435294, 0.435294, 0.533333, 1 )
+custom_fonts/normal_font = SubResource( 1 )
+text = "--"
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="PokemonPartyScreen/SkillChangeRect/VBoxContainer"]
+margin_top = 73.0
+margin_right = 523.0
+margin_bottom = 143.0
+rect_min_size = Vector2( 50, 11 )
+size_flags_vertical = 3
+custom_colors/default_color = Color( 0.435294, 0.435294, 0.533333, 1 )
+custom_fonts/normal_font = SubResource( 1 )
+text = "--"
+
+[node name="RichTextLabel3" type="RichTextLabel" parent="PokemonPartyScreen/SkillChangeRect/VBoxContainer"]
+margin_top = 147.0
+margin_right = 523.0
+margin_bottom = 216.0
+rect_min_size = Vector2( 50, 11 )
+size_flags_vertical = 3
+custom_colors/default_color = Color( 0.435294, 0.435294, 0.533333, 1 )
+custom_fonts/normal_font = SubResource( 1 )
+text = "--"
+
+[node name="RichTextLabel4" type="RichTextLabel" parent="PokemonPartyScreen/SkillChangeRect/VBoxContainer"]
+margin_top = 220.0
+margin_right = 523.0
+margin_bottom = 290.0
+rect_min_size = Vector2( 50, 11 )
+size_flags_vertical = 3
+custom_colors/default_color = Color( 0.435294, 0.435294, 0.533333, 1 )
+custom_fonts/normal_font = SubResource( 1 )
+text = "--"
+
+[node name="Arrow" type="TextureRect" parent="PokemonPartyScreen/SkillChangeRect"]
+margin_left = 29.0
+margin_top = 38.0
+margin_right = 48.0
+margin_bottom = 66.0
+texture = ExtResource( 3 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Bag" parent="." instance=ExtResource( 7 )]
+visible = false
+
+[node name="Authors" type="NinePatchRect" parent="."]
+visible = false
+margin_left = 291.0
+margin_top = 2.0
+margin_right = 731.0
+margin_bottom = 381.0
+texture = ExtResource( 2 )
+patch_margin_left = 20
+patch_margin_top = 20
+patch_margin_right = 20
+patch_margin_bottom = 20
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Title" type="Label" parent="Authors"]
+margin_left = 38.0
+margin_top = 27.0
+margin_right = 295.0
+margin_bottom = 69.0
+custom_colors/font_color = Color( 0.2, 0.2, 0.2, 1 )
+custom_fonts/font = SubResource( 2 )
+text = "Authors"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Authors"]
+margin_left = 66.0
+margin_top = 71.0
+margin_right = 408.0
+margin_bottom = 353.0
+custom_colors/default_color = Color( 0.2, 0.2, 0.2, 1 )
+custom_fonts/normal_font = SubResource( 4 )
+text = "BEICHEN HUANG
+SIFEI WEN
+TIANQI XU
+YIFAN WANG
+YU WEI"
+fit_content_height = true
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Donate" type="NinePatchRect" parent="."]
+visible = false
+margin_left = 291.0
+margin_top = 2.0
+margin_right = 687.0
+margin_bottom = 545.0
+texture = ExtResource( 2 )
+patch_margin_left = 20
+patch_margin_top = 20
+patch_margin_right = 20
+patch_margin_bottom = 20
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Title" type="Label" parent="Donate"]
+margin_left = 38.0
+margin_top = 27.0
+margin_right = 295.0
+margin_bottom = 69.0
+custom_colors/font_color = Color( 0.2, 0.2, 0.2, 1 )
+custom_fonts/font = SubResource( 2 )
+text = "Donate:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="Donate"]
+margin_left = 41.0
+margin_top = 74.0
+margin_right = 361.0
+margin_bottom = 513.0
+texture = ExtResource( 9 )
+expand = true
+
+[connection signal="change_bgm_preset" from="MusicSwitcher" to="." method="_on_MusicSwitcher_change_bgm_preset"]
+[connection signal="exit" from="MusicSwitcher" to="." method="_on_MusicSwitcher_exit"]
+[connection signal="cancel" from="PokemonPartyScreen" to="." method="_on_PokemonPartyScreen_cancel"]
+[connection signal="show_change_skill" from="PokemonPartyScreen" to="." method="_on_PokemonPartyScreen_show_change_skill"]
+[connection signal="exit_change_skill_menu" from="PokemonPartyScreen/SkillChangeRect" to="." method="_on_SkillChangeRect_exit_change_skill_menu"]
+[connection signal="cancel" from="Bag" to="." method="_on_Bag_cancel"]

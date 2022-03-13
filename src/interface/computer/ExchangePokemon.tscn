@@ -1,0 +1,715 @@
+[gd_scene load_steps=26 format=2]
+
+[ext_resource path="res://src/interface/computer/ExchangePokemon.gd" type="Script" id=1]
+[ext_resource path="res://assets/ui/Pokemon Party/main_pokemon_background.png" type="Texture" id=2]
+[ext_resource path="res://assets/ui/Pokemon Party/standby_pokemon_background.png" type="Texture" id=3]
+[ext_resource path="res://assets/pokemon/Onix.png" type="Texture" id=4]
+[ext_resource path="res://assets/pokemon/Charmander.png" type="Texture" id=5]
+[ext_resource path="res://assets/ui/Pokemon Party/party_background.png" type="Texture" id=6]
+[ext_resource path="res://assets/ui/Pokemon Party/gender_icons.png" type="Texture" id=7]
+[ext_resource path="res://assets/ui/Pokemon Party/exit_background_button.png" type="Texture" id=8]
+[ext_resource path="res://assets/fonts/pokemon fonts/Pokemon-FRLG.ttf" type="DynamicFontData" id=9]
+
+[sub_resource type="Animation" id=1]
+resource_name = "Idle"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("PokemonPartySprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 0, 1 ]
+}
+
+[sub_resource type="DynamicFont" id=14]
+size = 60
+font_data = ExtResource( 9 )
+
+[sub_resource type="StyleBoxFlat" id=16]
+bg_color = Color( 0.0901961, 0.713726, 0.145098, 1 )
+
+[sub_resource type="DynamicFont" id=15]
+size = 80
+font_data = ExtResource( 9 )
+
+[sub_resource type="DynamicFont" id=8]
+size = 80
+font_data = ExtResource( 9 )
+
+[sub_resource type="Animation" id=10]
+resource_name = "Idle"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("PokemonPartySprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 0, 1 ]
+}
+
+[sub_resource type="DynamicFont" id=9]
+size = 55
+font_data = ExtResource( 9 )
+
+[sub_resource type="StyleBoxFlat" id=17]
+bg_color = Color( 0.0901961, 0.713726, 0.145098, 1 )
+
+[sub_resource type="Animation" id=11]
+resource_name = "Idle"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("PokemonPartySprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 0, 1 ]
+}
+
+[sub_resource type="StyleBoxFlat" id=18]
+bg_color = Color( 0.0901961, 0.713726, 0.145098, 1 )
+
+[sub_resource type="Animation" id=12]
+resource_name = "Idle"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("PokemonPartySprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 0, 1 ]
+}
+
+[sub_resource type="StyleBoxFlat" id=19]
+bg_color = Color( 0.0901961, 0.713726, 0.145098, 1 )
+
+[sub_resource type="Animation" id=13]
+resource_name = "Idle"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("PokemonPartySprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 0, 1 ]
+}
+
+[sub_resource type="StyleBoxFlat" id=20]
+bg_color = Color( 0.0901961, 0.713726, 0.145098, 1 )
+
+[sub_resource type="Animation" id=7]
+resource_name = "Idle"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("PokemonPartySprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 0, 1 ]
+}
+
+[sub_resource type="StyleBoxFlat" id=21]
+bg_color = Color( 0.0901961, 0.713726, 0.145098, 1 )
+
+[node name="ExchangePokemon" type="Control"]
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_right = 1920.0
+margin_bottom = 1080.0
+texture = ExtResource( 6 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CancelSprite" type="Sprite" parent="."]
+position = Vector2( 1692.14, 968.961 )
+scale = Vector2( 7.84026, 7.83008 )
+texture = ExtResource( 8 )
+hframes = 2
+
+[node name="Slots" type="Node2D" parent="."]
+
+[node name="PokemonSlot1" type="Control" parent="Slots"]
+margin_left = 89.0
+margin_top = 196.0
+margin_right = 664.0
+margin_bottom = 494.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Background" type="Sprite" parent="Slots/PokemonSlot1"]
+position = Vector2( -61, -75 )
+scale = Vector2( 7.75, 6.73684 )
+texture = ExtResource( 2 )
+centered = false
+hframes = 2
+
+[node name="PokemonPartySprite" type="Sprite" parent="Slots/PokemonSlot1"]
+position = Vector2( 122.5, 119 )
+scale = Vector2( 6.41667, 6.41667 )
+texture = ExtResource( 5 )
+hframes = 2
+region_enabled = true
+region_rect = Rect2( 30, 9, 70, 24 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Slots/PokemonSlot1"]
+autoplay = "Idle"
+anims/Idle = SubResource( 1 )
+
+[node name="LevelLabel" type="Label" parent="Slots/PokemonSlot1"]
+margin_left = 321.0
+margin_top = 136.0
+margin_right = 384.0
+margin_bottom = 179.0
+custom_fonts/font = SubResource( 14 )
+text = "30"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HealthLabel" type="Label" parent="Slots/PokemonSlot1"]
+margin_left = 321.0
+margin_top = 242.0
+margin_right = 382.0
+margin_bottom = 290.0
+custom_fonts/font = SubResource( 14 )
+text = "23"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MaxHealthLabel" type="Label" parent="Slots/PokemonSlot1"]
+margin_left = 452.0
+margin_top = 242.0
+margin_right = 565.0
+margin_bottom = 307.0
+custom_fonts/font = SubResource( 14 )
+text = "30"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GenderIcon" type="Sprite" parent="Slots/PokemonSlot1"]
+position = Vector2( 75, 52 )
+texture = ExtResource( 7 )
+hframes = 2
+
+[node name="HP" type="ProgressBar" parent="Slots/PokemonSlot1"]
+margin_left = 172.0
+margin_top = 201.0
+margin_right = 543.0
+margin_bottom = 221.0
+custom_styles/fg = SubResource( 16 )
+value = 75.0
+percent_visible = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PokemonName" type="Label" parent="Slots/PokemonSlot1"]
+margin_left = 163.0
+margin_top = 6.0
+margin_right = 559.0
+margin_bottom = 111.0
+custom_fonts/font = SubResource( 15 )
+text = "Name"
+align = 1
+clip_text = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PokemonSlot2" type="Control" parent="Slots"]
+margin_left = 768.0
+margin_top = 66.0
+margin_right = 1900.0
+margin_bottom = 859.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Background" type="Sprite" parent="Slots/PokemonSlot2"]
+position = Vector2( -47.0001, -13 )
+scale = Vector2( 7.86, 7.20833 )
+texture = ExtResource( 3 )
+centered = false
+hframes = 2
+
+[node name="PokemonPartySprite" type="Sprite" parent="Slots/PokemonSlot2"]
+position = Vector2( 45, 53 )
+scale = Vector2( 4.75, 4.75 )
+texture = ExtResource( 4 )
+centered = false
+hframes = 2
+region_enabled = true
+region_rect = Rect2( 30, 9, 70, 24 )
+
+[node name="PokemonName" type="Label" parent="Slots/PokemonSlot2"]
+margin_left = 210.0
+margin_top = 24.0
+margin_right = 570.0
+margin_bottom = 90.0
+custom_fonts/font = SubResource( 8 )
+text = "Name"
+clip_text = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Slots/PokemonSlot2"]
+autoplay = "Idle"
+anims/Idle = SubResource( 10 )
+
+[node name="LevelLabel" type="Label" parent="Slots/PokemonSlot2"]
+margin_left = 357.0
+margin_top = 103.0
+margin_right = 442.0
+margin_bottom = 143.0
+custom_fonts/font = SubResource( 9 )
+text = "4"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HealthLabel" type="Label" parent="Slots/PokemonSlot2"]
+margin_left = 867.0
+margin_top = 103.0
+margin_right = 927.0
+margin_bottom = 146.0
+custom_fonts/font = SubResource( 9 )
+text = "23"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MaxHealthLabel" type="Label" parent="Slots/PokemonSlot2"]
+margin_left = 989.0
+margin_top = 103.0
+margin_right = 1065.0
+margin_bottom = 133.0
+custom_fonts/font = SubResource( 9 )
+text = "30"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GenderIcon" type="Sprite" parent="Slots/PokemonSlot2"]
+position = Vector2( 544.84, 128.16 )
+scale = Vector2( 5.07999, 3.80999 )
+texture = ExtResource( 7 )
+hframes = 2
+
+[node name="HP" type="ProgressBar" parent="Slots/PokemonSlot2"]
+margin_left = 707.0
+margin_top = 52.0
+margin_right = 1085.0
+margin_bottom = 73.0
+custom_styles/fg = SubResource( 17 )
+value = 75.0
+percent_visible = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PokemonSlot3" type="Control" parent="Slots"]
+margin_left = 768.0
+margin_top = 229.0
+margin_right = 1900.0
+margin_bottom = 377.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Background" type="Sprite" parent="Slots/PokemonSlot3"]
+position = Vector2( -47.0001, -13 )
+scale = Vector2( 7.86, 7.20833 )
+texture = ExtResource( 3 )
+centered = false
+hframes = 2
+
+[node name="PokemonPartySprite" type="Sprite" parent="Slots/PokemonSlot3"]
+position = Vector2( 45, 53 )
+scale = Vector2( 4.75, 4.75 )
+texture = ExtResource( 4 )
+centered = false
+hframes = 2
+region_enabled = true
+region_rect = Rect2( 30, 9, 70, 24 )
+
+[node name="PokemonName" type="Label" parent="Slots/PokemonSlot3"]
+margin_left = 210.0
+margin_top = 24.0
+margin_right = 570.0
+margin_bottom = 90.0
+custom_fonts/font = SubResource( 8 )
+text = "Name"
+clip_text = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Slots/PokemonSlot3"]
+autoplay = "Idle"
+anims/Idle = SubResource( 11 )
+
+[node name="LevelLabel" type="Label" parent="Slots/PokemonSlot3"]
+margin_left = 357.0
+margin_top = 103.0
+margin_right = 442.0
+margin_bottom = 143.0
+custom_fonts/font = SubResource( 9 )
+text = "4"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HealthLabel" type="Label" parent="Slots/PokemonSlot3"]
+margin_left = 867.0
+margin_top = 103.0
+margin_right = 927.0
+margin_bottom = 146.0
+custom_fonts/font = SubResource( 9 )
+text = "23"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MaxHealthLabel" type="Label" parent="Slots/PokemonSlot3"]
+margin_left = 989.0
+margin_top = 103.0
+margin_right = 1065.0
+margin_bottom = 133.0
+custom_fonts/font = SubResource( 9 )
+text = "30"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GenderIcon" type="Sprite" parent="Slots/PokemonSlot3"]
+position = Vector2( 544.84, 128.16 )
+scale = Vector2( 5.07999, 3.80999 )
+texture = ExtResource( 7 )
+hframes = 2
+
+[node name="HP" type="ProgressBar" parent="Slots/PokemonSlot3"]
+margin_left = 707.0
+margin_top = 52.0
+margin_right = 1085.0
+margin_bottom = 73.0
+custom_styles/fg = SubResource( 18 )
+value = 75.0
+percent_visible = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PokemonSlot4" type="Control" parent="Slots"]
+margin_left = 768.0
+margin_top = 391.0
+margin_right = 1900.0
+margin_bottom = 539.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Background" type="Sprite" parent="Slots/PokemonSlot4"]
+position = Vector2( -47.0001, -13 )
+scale = Vector2( 7.86, 7.20833 )
+texture = ExtResource( 3 )
+centered = false
+hframes = 2
+
+[node name="PokemonPartySprite" type="Sprite" parent="Slots/PokemonSlot4"]
+position = Vector2( 45, 53 )
+scale = Vector2( 4.75, 4.75 )
+texture = ExtResource( 4 )
+centered = false
+hframes = 2
+region_enabled = true
+region_rect = Rect2( 30, 9, 70, 24 )
+
+[node name="PokemonName" type="Label" parent="Slots/PokemonSlot4"]
+margin_left = 210.0
+margin_top = 24.0
+margin_right = 570.0
+margin_bottom = 90.0
+custom_fonts/font = SubResource( 8 )
+text = "Name"
+clip_text = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Slots/PokemonSlot4"]
+autoplay = "Idle"
+anims/Idle = SubResource( 12 )
+
+[node name="LevelLabel" type="Label" parent="Slots/PokemonSlot4"]
+margin_left = 357.0
+margin_top = 103.0
+margin_right = 442.0
+margin_bottom = 143.0
+custom_fonts/font = SubResource( 9 )
+text = "4"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HealthLabel" type="Label" parent="Slots/PokemonSlot4"]
+margin_left = 867.0
+margin_top = 103.0
+margin_right = 927.0
+margin_bottom = 146.0
+custom_fonts/font = SubResource( 9 )
+text = "23"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MaxHealthLabel" type="Label" parent="Slots/PokemonSlot4"]
+margin_left = 989.0
+margin_top = 103.0
+margin_right = 1065.0
+margin_bottom = 133.0
+custom_fonts/font = SubResource( 9 )
+text = "30"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GenderIcon" type="Sprite" parent="Slots/PokemonSlot4"]
+position = Vector2( 544.84, 128.16 )
+scale = Vector2( 5.07999, 3.80999 )
+texture = ExtResource( 7 )
+hframes = 2
+
+[node name="HP" type="ProgressBar" parent="Slots/PokemonSlot4"]
+margin_left = 707.0
+margin_top = 52.0
+margin_right = 1085.0
+margin_bottom = 73.0
+custom_styles/fg = SubResource( 19 )
+value = 75.0
+percent_visible = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PokemonSlot5" type="Control" parent="Slots"]
+margin_left = 768.0
+margin_top = 553.0
+margin_right = 1900.0
+margin_bottom = 701.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Background" type="Sprite" parent="Slots/PokemonSlot5"]
+position = Vector2( -47.0001, -13 )
+scale = Vector2( 7.86, 7.20833 )
+texture = ExtResource( 3 )
+centered = false
+hframes = 2
+
+[node name="PokemonPartySprite" type="Sprite" parent="Slots/PokemonSlot5"]
+position = Vector2( 45, 53 )
+scale = Vector2( 4.75, 4.75 )
+texture = ExtResource( 4 )
+centered = false
+hframes = 2
+region_enabled = true
+region_rect = Rect2( 30, 9, 70, 24 )
+
+[node name="PokemonName" type="Label" parent="Slots/PokemonSlot5"]
+margin_left = 210.0
+margin_top = 24.0
+margin_right = 570.0
+margin_bottom = 90.0
+custom_fonts/font = SubResource( 8 )
+text = "Name"
+clip_text = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Slots/PokemonSlot5"]
+autoplay = "Idle"
+anims/Idle = SubResource( 13 )
+
+[node name="LevelLabel" type="Label" parent="Slots/PokemonSlot5"]
+margin_left = 357.0
+margin_top = 103.0
+margin_right = 442.0
+margin_bottom = 143.0
+custom_fonts/font = SubResource( 9 )
+text = "4"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HealthLabel" type="Label" parent="Slots/PokemonSlot5"]
+margin_left = 867.0
+margin_top = 103.0
+margin_right = 927.0
+margin_bottom = 146.0
+custom_fonts/font = SubResource( 9 )
+text = "23"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MaxHealthLabel" type="Label" parent="Slots/PokemonSlot5"]
+margin_left = 989.0
+margin_top = 103.0
+margin_right = 1065.0
+margin_bottom = 133.0
+custom_fonts/font = SubResource( 9 )
+text = "30"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GenderIcon" type="Sprite" parent="Slots/PokemonSlot5"]
+position = Vector2( 544.84, 128.16 )
+scale = Vector2( 5.07999, 3.80999 )
+texture = ExtResource( 7 )
+hframes = 2
+
+[node name="HP" type="ProgressBar" parent="Slots/PokemonSlot5"]
+margin_left = 707.0
+margin_top = 52.0
+margin_right = 1085.0
+margin_bottom = 73.0
+custom_styles/fg = SubResource( 20 )
+value = 75.0
+percent_visible = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PokemonSlot6" type="Control" parent="Slots"]
+margin_left = 768.0
+margin_top = 715.0
+margin_right = 1900.0
+margin_bottom = 863.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Background" type="Sprite" parent="Slots/PokemonSlot6"]
+position = Vector2( -47.0001, -13 )
+scale = Vector2( 7.86, 7.20833 )
+texture = ExtResource( 3 )
+centered = false
+hframes = 2
+
+[node name="PokemonPartySprite" type="Sprite" parent="Slots/PokemonSlot6"]
+position = Vector2( 45, 53 )
+scale = Vector2( 4.75, 4.75 )
+texture = ExtResource( 4 )
+centered = false
+hframes = 2
+region_enabled = true
+region_rect = Rect2( 30, 9, 70, 24 )
+
+[node name="PokemonName" type="Label" parent="Slots/PokemonSlot6"]
+margin_left = 210.0
+margin_top = 24.0
+margin_right = 570.0
+margin_bottom = 90.0
+custom_fonts/font = SubResource( 8 )
+text = "Name"
+clip_text = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Slots/PokemonSlot6"]
+autoplay = "Idle"
+anims/Idle = SubResource( 7 )
+
+[node name="LevelLabel" type="Label" parent="Slots/PokemonSlot6"]
+margin_left = 357.0
+margin_top = 103.0
+margin_right = 442.0
+margin_bottom = 143.0
+custom_fonts/font = SubResource( 9 )
+text = "4"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HealthLabel" type="Label" parent="Slots/PokemonSlot6"]
+margin_left = 867.0
+margin_top = 103.0
+margin_right = 927.0
+margin_bottom = 146.0
+custom_fonts/font = SubResource( 9 )
+text = "23"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MaxHealthLabel" type="Label" parent="Slots/PokemonSlot6"]
+margin_left = 989.0
+margin_top = 103.0
+margin_right = 1065.0
+margin_bottom = 133.0
+custom_fonts/font = SubResource( 9 )
+text = "30"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GenderIcon" type="Sprite" parent="Slots/PokemonSlot6"]
+position = Vector2( 544.84, 128.16 )
+scale = Vector2( 5.07999, 3.80999 )
+texture = ExtResource( 7 )
+hframes = 2
+
+[node name="HP" type="ProgressBar" parent="Slots/PokemonSlot6"]
+margin_left = 707.0
+margin_top = 52.0
+margin_right = 1085.0
+margin_bottom = 73.0
+custom_styles/fg = SubResource( 21 )
+value = 75.0
+percent_visible = false
+__meta__ = {
+"_edit_use_anchors_": false
+}

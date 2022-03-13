@@ -1,0 +1,19 @@
+[gd_resource type="Resource" load_steps=9 format=2]
+
+[ext_resource path="res://src/combat/battlers/stats/growthStats/GrowthStats.gd" type="Script" id=1]
+[ext_resource path="res://src/combat/battlers/stats/level/VeryFast.tres" type="Resource" id=2]
+[ext_resource path="res://assets/pokemon/Pidgey.png" type="Texture" id=3]
+[ext_resource path="res://src/combat/battlers/skills/flyingSkill/WingAttack.tres" type="Resource" id=4]
+[ext_resource path="res://src/combat/battlers/skills/flyingSkill/Gust.tres" type="Resource" id=5]
+[ext_resource path="res://src/combat/battlers/skills/normalSkill/QuickAttack.tres" type="Resource" id=6]
+[ext_resource path="res://src/combat/battlers/skills/psychicSkill/Agility.tres" type="Resource" id=7]
+[ext_resource path="res://src/combat/battlers/skills/normalSkill/SandAttack.tres" type="Resource" id=8]
+
+[resource]
+script = ExtResource( 1 )
+level_array = ExtResource( 2 )
+species_strength = [ 40, 45, 40, 35, 35, 56 ]
+primary_type = 2
+secondary_type = 18
+icon = ExtResource( 3 )
+can_learn_skills = [ ExtResource( 8 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 5 ), ExtResource( 4 ) ]

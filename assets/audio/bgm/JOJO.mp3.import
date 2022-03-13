@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/JOJO.mp3-a9b99f2db39f5f50dc942a484ef27ee4.mp3str"
+
+[deps]
+
+source_file="res://assets/audio/bgm/JOJO.mp3"
+dest_files=[ "res://.import/JOJO.mp3-a9b99f2db39f5f50dc942a484ef27ee4.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

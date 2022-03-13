@@ -1,0 +1,146 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://assets/fonts/pokemon fonts/Pokemon-DP-Bold.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://assets/ui/pokemon Battle/gender_icons.png" type="Texture" id=2]
+[ext_resource path="res://assets/ui/pokemon Battle/hpbar1.png" type="Texture" id=3]
+[ext_resource path="res://assets/ui/pokemon Battle/state.png" type="Texture" id=4]
+[ext_resource path="res://assets/ui/pokemon Battle/exp.png" type="Texture" id=6]
+
+[sub_resource type="DynamicFont" id=1]
+size = 70
+extra_spacing_top = 20
+extra_spacing_bottom = 10
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 60
+extra_spacing_top = 20
+extra_spacing_bottom = 10
+extra_spacing_char = 5
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 45
+extra_spacing_top = 20
+extra_spacing_bottom = 10
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 45
+extra_spacing_top = 20
+extra_spacing_bottom = 10
+font_data = ExtResource( 1 )
+
+[sub_resource type="Animation" id=5]
+resource_name = "hpDown"
+
+[sub_resource type="StyleBoxFlat" id=6]
+bg_color = Color( 0.886275, 0.443137, 0.270588, 1 )
+
+[sub_resource type="StyleBoxEmpty" id=7]
+
+[node name="SelfBar" type="Node2D"]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="AttributeBack" type="Sprite" parent="."]
+position = Vector2( 1525.14, 649.083 )
+scale = Vector2( 6, 5 )
+texture = ExtResource( 3 )
+region_enabled = true
+region_rect = Rect2( 126, 1, 134, 50 )
+
+[node name="AttributeBack2" type="Sprite" parent="."]
+position = Vector2( 1525.14, 649.083 )
+scale = Vector2( 6, 5 )
+texture = ExtResource( 3 )
+region_enabled = true
+region_rect = Rect2( 126, 1, 134, 50 )
+
+[node name="Name" type="Label" parent="."]
+margin_left = 1260.0
+margin_top = 558.0
+margin_right = 1648.0
+margin_bottom = 641.0
+custom_colors/font_color = Color( 0.313726, 0.313726, 0.313726, 1 )
+custom_fonts/font = SubResource( 1 )
+text = "Pikachu"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Level" type="Label" parent="."]
+margin_left = 1784.34
+margin_top = 549.67
+margin_right = 1853.34
+margin_bottom = 631.67
+custom_colors/font_color = Color( 0.313726, 0.313726, 0.313726, 1 )
+custom_fonts/font = SubResource( 2 )
+text = "6"
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MaxHp" type="Label" parent="."]
+margin_left = 1726.0
+margin_top = 663.0
+margin_right = 1795.0
+margin_bottom = 722.0
+custom_colors/font_color = Color( 0.313726, 0.313726, 0.313726, 1 )
+custom_fonts/font = SubResource( 3 )
+text = "45"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CurHp" type="Label" parent="."]
+margin_left = 1597.0
+margin_top = 663.0
+margin_right = 1665.0
+margin_bottom = 722.0
+custom_colors/font_color = Color( 0.313726, 0.313726, 0.313726, 1 )
+custom_fonts/font = SubResource( 4 )
+text = "45"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="gender" type="Sprite" parent="."]
+position = Vector2( 1682.11, 602.192 )
+scale = Vector2( 6, 6 )
+texture = ExtResource( 2 )
+hframes = 2
+
+[node name="state" type="Sprite" parent="."]
+position = Vector2( 1347.85, 690.916 )
+scale = Vector2( 6, 6 )
+texture = ExtResource( 4 )
+vframes = 5
+
+[node name="Exp" type="Sprite" parent="."]
+position = Vector2( 1285.43, 737.693 )
+scale = Vector2( 192, 4.25 )
+texture = ExtResource( 6 )
+centered = false
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/hpDown = SubResource( 5 )
+
+[node name="HP" type="ProgressBar" parent="."]
+margin_left = 1572.0
+margin_top = 654.0
+margin_right = 1862.0
+margin_bottom = 669.0
+custom_styles/fg = SubResource( 6 )
+custom_styles/bg = SubResource( 7 )
+value = 100.0
+percent_visible = false
+__meta__ = {
+"_edit_use_anchors_": false
+}

@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Silver_Bullet.mp3-201def3b619e16c8ea97b13a9c946652.mp3str"
+
+[deps]
+
+source_file="res://assets/audio/bgm/Silver_Bullet.mp3"
+dest_files=[ "res://.import/Silver_Bullet.mp3-201def3b619e16c8ea97b13a9c946652.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

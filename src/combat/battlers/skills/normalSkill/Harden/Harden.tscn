@@ -1,0 +1,161 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://src/combat/battlers/skills/normalSkill/Harden/Harden.gd" type="Script" id=1]
+[ext_resource path="res://assets/battle/skill/Normal/star.png" type="Texture" id=2]
+
+[sub_resource type="Animation" id=1]
+resource_name = "harden"
+length = 0.4
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath("star/star:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("star/star2:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.05, 0.15, 0.25, 0.35 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 3, 0, 2, 1 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("star/star3:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0.05, 0.15, 0.25, 0.35 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 3, 2, 1 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("star/star4:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 3, 1, 2, 0 ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("star/star5:frame")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 0 ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("star/star6:frame")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0.05, 0.15, 0.25, 0.35 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 3, 2, 1, 0 ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("star/star7:frame")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 2, 3, 0, 1, 2 ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("star/star8:frame")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0.05, 0.15, 0.25, 0.35 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 3, 1, 2 ]
+}
+
+[node name="harden" type="Position2D"]
+script = ExtResource( 1 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/harden = SubResource( 1 )
+
+[node name="star" type="Node2D" parent="."]
+position = Vector2( 500, 600 )
+scale = Vector2( 8, 8 )
+
+[node name="star" type="Sprite" parent="star"]
+position = Vector2( -21.0168, -3.47281 )
+texture = ExtResource( 2 )
+hframes = 4
+
+[node name="star2" type="Sprite" parent="star"]
+position = Vector2( 12.3922, -16.3909 )
+texture = ExtResource( 2 )
+hframes = 4
+frame = 1
+
+[node name="star3" type="Sprite" parent="star"]
+position = Vector2( -7.65282, -18.1727 )
+texture = ExtResource( 2 )
+hframes = 4
+frame = 1
+
+[node name="star4" type="Sprite" parent="star"]
+position = Vector2( 1.70119, 4.14819 )
+texture = ExtResource( 2 )
+hframes = 4
+
+[node name="star5" type="Sprite" parent="star"]
+position = Vector2( -7.20781, 13.8992 )
+texture = ExtResource( 2 )
+hframes = 4
+
+[node name="star6" type="Sprite" parent="star"]
+position = Vector2( -6.81082, -1.91982 )
+texture = ExtResource( 2 )
+hframes = 4
+
+[node name="star7" type="Sprite" parent="star"]
+position = Vector2( 15.9562, -7.03651 )
+texture = ExtResource( 2 )
+hframes = 4
+frame = 2
+
+[node name="star8" type="Sprite" parent="star"]
+position = Vector2( 15.6552, 9.12019 )
+texture = ExtResource( 2 )
+hframes = 4
+frame = 2
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]

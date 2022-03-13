@@ -1,0 +1,81 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://src/main/Game.gd" type="Script" id=1]
+[ext_resource path="res://src/pokemonBag/PokemonInBag.tscn" type="PackedScene" id=2]
+[ext_resource path="res://src/main/SceneManager.gd" type="Script" id=3]
+[ext_resource path="res://src/items/interface/PokemonHandBook.tscn" type="PackedScene" id=4]
+[ext_resource path="res://assets/shaders/TransitionColor.tscn" type="PackedScene" id=5]
+[ext_resource path="res://src/main/MusicPlayer.gd" type="Script" id=8]
+[ext_resource path="res://src/map/town/Town.tscn" type="PackedScene" id=10]
+[ext_resource path="res://src/main/PokemonDepository.gd" type="Script" id=11]
+[ext_resource path="res://src/interface/menus/PokemonMenu.tscn" type="PackedScene" id=12]
+
+[node name="Game" type="Node"]
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_horizontal_guides_": [ 205.0 ]
+}
+
+[node name="SceneManager" type="Node2D" parent="."]
+script = ExtResource( 3 )
+
+[node name="Town" parent="SceneManager" instance=ExtResource( 10 )]
+position = Vector2( 134, 98 )
+
+[node name="Party" parent="." instance=ExtResource( 2 )]
+position = Vector2( 29, 11 )
+
+[node name="PokemonDepository" type="Node2D" parent="."]
+script = ExtResource( 11 )
+
+[node name="Overlays" type="CanvasLayer" parent="."]
+layer = 128
+
+[node name="TransitionColor" parent="Overlays" instance=ExtResource( 5 )]
+pause_mode = 2
+anchor_left = -0.83
+anchor_top = -0.822
+anchor_right = 1.071
+anchor_bottom = 1.864
+margin_left = 236.6
+margin_top = -184.24
+margin_right = 236.679
+margin_bottom = -184.12
+mouse_filter = 2
+
+[node name="MusicPlayer" type="AudioStreamPlayer" parent="."]
+script = ExtResource( 8 )
+
+[node name="Menu" parent="." instance=ExtResource( 12 )]
+
+[node name="PokemonHandbook" parent="." instance=ExtResource( 4 )]
+scale = Vector2( 0.7, 0.7 )
+transform = Transform2D( 0.7, 0, 0, 0.7, 0, 0 )
+
+[node name="PokemonDetailedInfo" parent="PokemonHandbook/Control" index="2"]
+offset = Vector2( 0, 0 )
+scale = Vector2( 0.7, 0.7 )
+transform = Transform2D( 0.7, 0, 0, 0.7, 0, 0 )
+
+[node name="FurtherDetailedInfo" parent="PokemonHandbook/Control/PokemonDetailedInfo" index="1"]
+offset = Vector2( 0, 0 )
+scale = Vector2( 0.7, 0.7 )
+transform = Transform2D( 0.7, 0, 0, 0.7, 0, 0 )
+
+[node name="Label" parent="PokemonHandbook/Control/PokemonDetailedInfo/FurtherDetailedInfo/Control/AttributeList/Description" index="0"]
+margin_left = 214.0
+margin_top = 74.0
+margin_right = 712.0
+margin_bottom = 327.0
+
+[node name="Profile" parent="PokemonHandbook/Control/PokemonDetailedInfo/FurtherDetailedInfo/Control" index="2"]
+margin_left = -51790.8
+margin_top = 7178.01
+margin_right = -68572.5
+margin_bottom = 1727.89
+
+[connection signal="change_preset" from="Menu" to="." method="_on_Menu_change_preset"]
+
+[editable path="PokemonHandbook"]
+[editable path="PokemonHandbook/Control/PokemonDetailedInfo"]
+[editable path="PokemonHandbook/SelectArrow"]

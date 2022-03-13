@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Undeniable_Fate.mp3-bf95832ca751ebe557cb42d55f08a70c.mp3str"
+
+[deps]
+
+source_file="res://assets/audio/bgm/Undeniable_Fate.mp3"
+dest_files=[ "res://.import/Undeniable_Fate.mp3-bf95832ca751ebe557cb42d55f08a70c.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

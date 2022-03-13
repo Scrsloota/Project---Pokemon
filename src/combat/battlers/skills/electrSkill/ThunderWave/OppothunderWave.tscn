@@ -1,0 +1,263 @@
+[gd_scene load_steps=20 format=2]
+
+[ext_resource path="res://src/combat/battlers/skills/electrSkill/ThunderWave/thunderWave.gd" type="Script" id=1]
+[ext_resource path="res://assets/battle/skill/thunderBolt&Shock/thunder1.png" type="Texture" id=2]
+[ext_resource path="res://assets/battle/skill/thunderBolt&Shock/electric2.png" type="Texture" id=3]
+[ext_resource path="res://assets/battle/skill/thunderWave/wave1.png" type="Texture" id=4]
+[ext_resource path="res://assets/battle/skill/thunderBolt&Shock/thunder3.png" type="Texture" id=5]
+[ext_resource path="res://assets/battle/skill/thunderWave/wave4.png" type="Texture" id=6]
+[ext_resource path="res://assets/battle/skill/thunderWave/wave3.png" type="Texture" id=7]
+[ext_resource path="res://assets/battle/skill/thunderBolt&Shock/thunder2.png" type="Texture" id=8]
+[ext_resource path="res://assets/battle/skill/thunderWave/wave6.png" type="Texture" id=9]
+[ext_resource path="res://assets/battle/skill/thunderBolt&Shock/electric.png" type="Texture" id=10]
+[ext_resource path="res://assets/battle/skill/thunderWave/wave5.png" type="Texture" id=11]
+[ext_resource path="res://assets/battle/skill/thunderBolt&Shock/electric3.png" type="Texture" id=12]
+[ext_resource path="res://assets/battle/skill/thunderBolt&Shock/electric5.png" type="Texture" id=13]
+[ext_resource path="res://assets/battle/skill/thunderBolt&Shock/electric4.png" type="Texture" id=14]
+[ext_resource path="res://assets/battle/skill/thunderBolt&Shock/electric6.png" type="Texture" id=15]
+[ext_resource path="res://assets/battle/skill/thunderWave/wave2.png" type="Texture" id=16]
+
+[sub_resource type="Animation" id=1]
+resource_name = "electric"
+length = 1.2
+tracks/0/type = "value"
+tracks/0/path = NodePath("electric/electric_state1:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6, 0.8, 1, 1.2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("electric/electric_state2:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6, 0.8, 1, 1.2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("electric:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 1.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "thund"
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath("thunder/Sprite:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.3, 0.5, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ false, true, false, true, false ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("thunder/Sprite2:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.3, 0.4, 0.6, 0.7, 0.8, 0.9 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ false, true, false, true, false, true, false ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("thunder/Sprite3:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.4, 0.5, 0.7, 0.8, 0.9 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ false, true, false, true, false, true ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("thunder:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 1.2, 1 ), Vector2( 1, 1 ), Vector2( 1.2, 1 ), Vector2( 1, 1 ), Vector2( 1.2, 1 ), Vector2( 1, 1 ), Vector2( 1.2, 1 ), Vector2( 1, 1 ), Vector2( 1.2, 1 ), Vector2( 1, 1 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("thunder/Sprite3:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0.9, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "wave"
+tracks/0/type = "value"
+tracks/0/path = NodePath("wave:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("wave/wave:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ ExtResource( 9 ), ExtResource( 4 ), ExtResource( 9 ), ExtResource( 4 ), ExtResource( 9 ), ExtResource( 4 ), ExtResource( 9 ), ExtResource( 4 ), ExtResource( 9 ), ExtResource( 4 ), ExtResource( 9 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("wave/wave2:texture")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ ExtResource( 16 ), ExtResource( 6 ), ExtResource( 16 ), ExtResource( 6 ), ExtResource( 16 ), ExtResource( 6 ), ExtResource( 16 ), ExtResource( 6 ), ExtResource( 16 ), ExtResource( 6 ), ExtResource( 16 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("wave/wave3:texture")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ ExtResource( 7 ), ExtResource( 11 ), ExtResource( 7 ), ExtResource( 11 ), ExtResource( 7 ), ExtResource( 11 ), ExtResource( 7 ), ExtResource( 11 ), ExtResource( 7 ), ExtResource( 11 ), ExtResource( 7 ) ]
+}
+
+[node name="thunderWave" type="Position2D"]
+position = Vector2( 530, 480 )
+scale = Vector2( 2, 2 )
+script = ExtResource( 1 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/electric = SubResource( 1 )
+anims/thund = SubResource( 2 )
+anims/wave = SubResource( 3 )
+
+[node name="thunder" type="Node2D" parent="."]
+
+[node name="Sprite" type="Sprite" parent="thunder"]
+visible = false
+texture = ExtResource( 2 )
+
+[node name="Sprite2" type="Sprite" parent="thunder"]
+visible = false
+texture = ExtResource( 8 )
+
+[node name="Sprite3" type="Sprite" parent="thunder"]
+modulate = Color( 1, 1, 1, 0 )
+position = Vector2( 0, 1.34071 )
+texture = ExtResource( 5 )
+
+[node name="electric" type="Node2D" parent="."]
+
+[node name="electric_state1" type="Node2D" parent="electric"]
+
+[node name="Sprite" type="Sprite" parent="electric/electric_state1"]
+position = Vector2( -36.2775, 53.0361 )
+rotation = 4.53786
+scale = Vector2( 5, 5 )
+texture = ExtResource( 10 )
+
+[node name="Sprite2" type="Sprite" parent="electric/electric_state1"]
+position = Vector2( -10.3631, 138.453 )
+rotation = 1.5708
+scale = Vector2( 5, 5 )
+texture = ExtResource( 15 )
+
+[node name="Sprite3" type="Sprite" parent="electric/electric_state1"]
+position = Vector2( 74.9552, 67.3193 )
+scale = Vector2( 5, 5 )
+texture = ExtResource( 13 )
+flip_h = true
+
+[node name="electric_state2" type="Node2D" parent="electric"]
+modulate = Color( 1, 1, 1, 0 )
+
+[node name="Sprite" type="Sprite" parent="electric/electric_state2"]
+position = Vector2( 43.2206, 21.3548 )
+rotation = 0.698132
+scale = Vector2( 5, 5 )
+texture = ExtResource( 3 )
+
+[node name="Sprite2" type="Sprite" parent="electric/electric_state2"]
+position = Vector2( 60.5433, 134.952 )
+scale = Vector2( 5, 5 )
+texture = ExtResource( 12 )
+flip_v = true
+
+[node name="Sprite3" type="Sprite" parent="electric/electric_state2"]
+position = Vector2( -44.311, 86.228 )
+rotation = 6.02139
+scale = Vector2( 5, 5 )
+texture = ExtResource( 14 )
+flip_h = true
+
+[node name="wave" type="Node2D" parent="."]
+visible = false
+position = Vector2( 184.185, -6.67419 )
+scale = Vector2( 6, 4 )
+
+[node name="wave" type="Sprite" parent="wave"]
+position = Vector2( -28.7613, 23.3441 )
+texture = ExtResource( 9 )
+
+[node name="wave2" type="Sprite" parent="wave"]
+position = Vector2( -30.7613, 32.3441 )
+rotation = -0.523599
+texture = ExtResource( 16 )
+
+[node name="wave3" type="Sprite" parent="wave"]
+position = Vector2( -29.2613, 12.0555 )
+rotation = 2.61799
+texture = ExtResource( 7 )
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]

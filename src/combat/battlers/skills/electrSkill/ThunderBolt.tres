@@ -1,0 +1,20 @@
+[gd_resource type="Resource" load_steps=4 format=2]
+
+[ext_resource path="res://src/combat/battlers/skills/Skill.gd" type="Script" id=1]
+[ext_resource path="res://src/combat/battlers/skills/electrSkill/ThunderBolt/thunderBolt.tscn" type="PackedScene" id=2]
+[ext_resource path="res://src/combat/battlers/skills/electrSkill/ThunderBolt/OppothunderBolt.tscn" type="PackedScene" id=3]
+
+[resource]
+script = ExtResource( 1 )
+name = "Thunder Bolt"
+description = ""
+max_pp = 24
+base_damage = 90
+type = 12
+success_chance = 1.0
+stat_modify_oppo = [ 0, 0, 0, 0, 0, 0, 0 ]
+stat_modify_self = [ 0, 0, 0, 0, 0, 0, 0 ]
+nv_status_oppo = 3
+nv_status_chance = 0.1
+self_skill_anim = ExtResource( 2 )
+oppo_skill_anim = ExtResource( 3 )

@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Voltaic_Black_Knight.mp3-f58587f356dd3f30f7b14a5c239eaea9.mp3str"
+
+[deps]
+
+source_file="res://assets/audio/bgm/Voltaic_Black_Knight.mp3"
+dest_files=[ "res://.import/Voltaic_Black_Knight.mp3-f58587f356dd3f30f7b14a5c239eaea9.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

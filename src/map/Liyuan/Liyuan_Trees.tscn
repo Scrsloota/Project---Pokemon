@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://assets/map/trees/Liyuan_tree_1.png" type="Texture" id=1]
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 19.5, 17 )
+
+[node name="Liyuan_Trees" type="StaticBody2D"]
+z_index = 2
+collision_layer = 2
+collision_mask = 0
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 195, 176 )
+scale = Vector2( 1.10153, 1.08822 )
+texture = ExtResource( 1 )
+offset = Vector2( -150, -130.281 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 31, 39 )
+shape = SubResource( 3 )

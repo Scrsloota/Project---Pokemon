@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/SAKURA_EMPIRE.mp3-b8f17362477db6e0a97a9e15205c9e2b.mp3str"
+
+[deps]
+
+source_file="res://assets/audio/bgm/SAKURA_EMPIRE.mp3"
+dest_files=[ "res://.import/SAKURA_EMPIRE.mp3-b8f17362477db6e0a97a9e15205c9e2b.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

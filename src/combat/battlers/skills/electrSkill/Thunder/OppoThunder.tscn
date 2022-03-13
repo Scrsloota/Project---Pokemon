@@ -1,0 +1,197 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://assets/battle/skill/Thunder/thunder2.png" type="Texture" id=1]
+[ext_resource path="res://assets/battle/skill/Thunder/light1.png" type="Texture" id=2]
+[ext_resource path="res://assets/battle/skill/Thunder/light2.png" type="Texture" id=3]
+[ext_resource path="res://assets/battle/skill/Thunder/thunder7.png" type="Texture" id=4]
+[ext_resource path="res://assets/battle/skill/Thunder/thunder6.png" type="Texture" id=5]
+[ext_resource path="res://assets/battle/skill/Thunder/thunder1.png" type="Texture" id=6]
+[ext_resource path="res://assets/battle/skill/Thunder/thunder8.png" type="Texture" id=7]
+[ext_resource path="res://src/combat/battlers/skills/electrSkill/Thunder/Thunder.gd" type="Script" id=8]
+
+[sub_resource type="Animation" id=1]
+resource_name = "appear"
+length = 0.4
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath("YSort/thunder:offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, -38 ), Vector2( 0, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("YSort/thunder:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("YSort/thunder:flip_h")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, false, true, false, true, false, true, false ]
+}
+
+[sub_resource type="Animation" id=2]
+length = 1.5
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath("YSort/thunder:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6, 0.8, 1, 1.2, 1.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ ExtResource( 6 ), ExtResource( 1 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 7 ), ExtResource( 6 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("YSort/thunder:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6, 0.8, 1, 1.2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Vector2( 0, 0 ), Vector2( 0, 0 ), Vector2( 1.58751, 0 ), Vector2( -3.175, 0 ), Vector2( 1.58751, 0 ), Vector2( -3.175, 0 ), Vector2( -0.198636, 0 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("YSort/light/light1:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.1, 1.5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ false, true, false ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("YSort/light/light2:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 1.2, 1.5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ false, true, false ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("YSort/thunder:scale")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = false
+tracks/4/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 1.2, 1 ), Vector2( 1, 1 ), Vector2( 1.2, 1 ), Vector2( 1, 1 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("YSort/light:scale")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0.1, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4, 0.45, 0.5, 0.55, 0.6, 0.65, 0.7, 0.75, 0.8, 0.85, 0.9, 0.95, 1, 1.05, 1.1, 1.15, 1.151, 1.2, 1.3, 1.4, 1.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 1.2, 1 ), Vector2( 1, 1 ), Vector2( 1.2, 1 ), Vector2( 1, 1 ), Vector2( 1.2, 1 ), Vector2( 1, 1 ), Vector2( 1.2, 1 ), Vector2( 1, 1 ), Vector2( 1.2, 1 ), Vector2( 1, 1 ), Vector2( 1.2, 1 ), Vector2( 1, 1 ), Vector2( 1.2, 1 ), Vector2( 1, 1 ), Vector2( 1.2, 1 ), Vector2( 1, 1 ), Vector2( 1.2, 1 ), Vector2( 1, 1 ), Vector2( 1.2, 1 ), Vector2( 1, 1 ), Vector2( 1.2, 1 ), Vector2( 1.2, 1 ), Vector2( 1, 1 ), Vector2( 1.2, 1 ), Vector2( 1, 1 ), Vector2( 1.2, 1 ) ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath(".:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0, 1.4, 1.5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ true, true, false ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("YSort/thunder:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0, 1.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ true, true ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("YSort/thunder:flip_h")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 1.2, 1.3, 1.4, 1.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, false, true ]
+}
+
+[node name="Thunder" type="Position2D"]
+position = Vector2( 540, 565 )
+scale = Vector2( 10, 12 )
+script = ExtResource( 8 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/appear = SubResource( 1 )
+anims/thunder = SubResource( 2 )
+
+[node name="YSort" type="YSort" parent="."]
+
+[node name="thunder" type="Sprite" parent="YSort"]
+position = Vector2( -0.198636, 0 )
+texture = ExtResource( 6 )
+
+[node name="light" type="Node2D" parent="YSort"]
+scale = Vector2( 1.2, 1 )
+
+[node name="light2" type="Sprite" parent="YSort/light"]
+visible = false
+position = Vector2( 0.793701, 3.7937 )
+scale = Vector2( 1.2, 0.8 )
+texture = ExtResource( 3 )
+
+[node name="light1" type="Sprite" parent="YSort/light"]
+visible = false
+modulate = Color( 1, 1, 1, 0.756863 )
+position = Vector2( 1.19054, 6.34961 )
+scale = Vector2( 1.5, 1 )
+texture = ExtResource( 2 )
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
+[connection signal="animation_started" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_started"]

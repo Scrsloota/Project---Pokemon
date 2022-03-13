@@ -1,0 +1,21 @@
+[gd_resource type="Resource" load_steps=11 format=2]
+
+[ext_resource path="res://src/combat/battlers/stats/growthStats/GrowthStats.gd" type="Script" id=1]
+[ext_resource path="res://src/combat/battlers/stats/level/VeryFast.tres" type="Resource" id=2]
+[ext_resource path="res://assets/pokemon/Squirtle.png" type="Texture" id=3]
+[ext_resource path="res://src/combat/battlers/skills/normalSkill/Tackle.tres" type="Resource" id=4]
+[ext_resource path="res://src/combat/battlers/skills/normalSkill/TailWhip.tres" type="Resource" id=5]
+[ext_resource path="res://src/combat/battlers/skills/normalSkill/SkullBash.tres" type="Resource" id=6]
+[ext_resource path="res://src/combat/battlers/skills/waterSkill/HydroPump.tres" type="Resource" id=7]
+[ext_resource path="res://src/combat/battlers/skills/waterSkill/WithDraw.tres" type="Resource" id=8]
+[ext_resource path="res://src/combat/battlers/skills/waterSkill/WaterGun.tres" type="Resource" id=9]
+[ext_resource path="res://src/combat/battlers/skills/waterSkill/Bubble.tres" type="Resource" id=10]
+
+[resource]
+script = ExtResource( 1 )
+level_array = ExtResource( 2 )
+species_strength = [ 44, 48, 65, 50, 64, 43 ]
+primary_type = 10
+secondary_type = 18
+icon = ExtResource( 3 )
+can_learn_skills = [ ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 10 ), ExtResource( 7 ), ExtResource( 9 ), ExtResource( 8 ) ]

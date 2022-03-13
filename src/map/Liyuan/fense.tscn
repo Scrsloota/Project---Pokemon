@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://assets/map/fense/fense2.jpg" type="Texture" id=1]
+
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 31.875, 24.25 )
+
+[node name="fense" type="StaticBody2D"]
+z_index = 1
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 32.125, 23.75 )
+shape = SubResource( 4 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 32.1897, 21.4142 )
+scale = Vector2( 0.832711, 0.709853 )
+z_index = 5
+texture = ExtResource( 1 )

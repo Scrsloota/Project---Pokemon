@@ -1,0 +1,20 @@
+[gd_resource type="Resource" load_steps=4 format=2]
+
+[ext_resource path="res://src/combat/battlers/skills/Skill.gd" type="Script" id=1]
+[ext_resource path="res://src/combat/battlers/skills/normalSkill/Screech/Screech.tscn" type="PackedScene" id=2]
+[ext_resource path="res://src/combat/battlers/skills/normalSkill/Screech/OppoScreech.tscn" type="PackedScene" id=3]
+
+[resource]
+script = ExtResource( 1 )
+name = "Screech"
+description = ""
+max_pp = 64
+base_damage = 0
+type = 0
+success_chance = 0.85
+stat_modify_oppo = [ 0, -2, 0, 0, 0, 0, 0 ]
+stat_modify_self = [ 0, 0, 0, 0, 0, 0, 0 ]
+nv_status_oppo = 0
+nv_status_chance = 0.0
+self_skill_anim = ExtResource( 2 )
+oppo_skill_anim = ExtResource( 3 )

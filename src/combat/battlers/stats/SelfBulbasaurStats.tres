@@ -1,0 +1,17 @@
+[gd_resource type="Resource" load_steps=8 format=2]
+
+[ext_resource path="res://src/combat/battlers/stats/CharacterStats.gd" type="Script" id=1]
+[ext_resource path="res://src/combat/battlers/skills/potableSkill/portNormalskill/PortTackle.tres" type="Resource" id=2]
+[ext_resource path="res://src/combat/battlers/stats/IndividualStats/All0IndividualStats.tres" type="Resource" id=3]
+[ext_resource path="res://src/combat/battlers/stats/growthStats/BulbasaurGrowthStats.tres" type="Resource" id=4]
+[ext_resource path="res://src/combat/battlers/skills/potableSkill/portNormalskill/PortGrowl.tres" type="Resource" id=5]
+[ext_resource path="res://src/combat/battlers/skills/potableSkill/portGrassskill/PortVineWhip.tres" type="Resource" id=6]
+[ext_resource path="res://src/combat/battlers/skills/potableSkill/portNormalskill/PortGrowth.tres" type="Resource" id=7]
+
+[resource]
+script = ExtResource( 1 )
+growth_stats = ExtResource( 4 )
+individual_stats = ExtResource( 3 )
+learned_skills = [ ExtResource( 2 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ) ]
+tot_experience = 246
+text_name = ""

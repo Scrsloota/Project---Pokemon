@@ -1,0 +1,17 @@
+[gd_resource type="Resource" load_steps=8 format=2]
+
+[ext_resource path="res://src/combat/battlers/stats/IndividualStats/All0IndividualStats.tres" type="Resource" id=1]
+[ext_resource path="res://src/combat/battlers/skills/potableSkill/portNormalskill/PortPound.tres" type="Resource" id=2]
+[ext_resource path="res://src/combat/battlers/stats/CharacterStats.gd" type="Script" id=3]
+[ext_resource path="res://src/combat/battlers/skills/potableSkill/portPoisonskill/PortSludge.tres" type="Resource" id=4]
+[ext_resource path="res://src/combat/battlers/skills/potableSkill/portNormalskill/PortHarden.tres" type="Resource" id=5]
+[ext_resource path="res://src/combat/battlers/skills/potableSkill/portPoisonskill/PortPoisonGas.tres" type="Resource" id=6]
+[ext_resource path="res://src/combat/battlers/stats/growthStats/GrimerGrowthStats.tres" type="Resource" id=7]
+
+[resource]
+script = ExtResource( 3 )
+growth_stats = ExtResource( 7 )
+individual_stats = ExtResource( 1 )
+learned_skills = [ ExtResource( 2 ), ExtResource( 6 ), ExtResource( 4 ), ExtResource( 5 ) ]
+tot_experience = 246
+text_name = ""

@@ -1,0 +1,51 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://src/map/pawns/actions/ShopAction.gd" type="Script" id=2]
+[ext_resource path="res://src/map/pawns/PawnAnim.tscn" type="PackedScene" id=3]
+[ext_resource path="res://assets/sprites/dialogue_balloon.png" type="Texture" id=4]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 6, 6.83333 )
+
+[node name="ShopKeeper" type="StaticBody2D" groups=[
+"interactive_pawns",
+]]
+pause_mode = 2
+position = Vector2( 121.125, 33 )
+scale = Vector2( 1.5, 1.5 )
+collision_layer = 16
+collision_mask = 0
+
+[node name="Pivot" type="Position2D" parent="."]
+
+[node name="PawnAnim" parent="Pivot" instance=ExtResource( 3 )]
+
+[node name="DialogueBalloon" type="Sprite" parent="."]
+position = Vector2( 10, -5 )
+scale = Vector2( 0.3, 0.3 )
+texture = ExtResource( 4 )
+
+[node name="CollisionRange" type="CollisionShape2D" parent="."]
+position = Vector2( -0.0833321, 0.666668 )
+shape = SubResource( 1 )
+
+[node name="Raycasts" type="Node2D" parent="."]
+
+[node name="Up" type="RayCast2D" parent="Raycasts"]
+cast_to = Vector2( 0, -30 )
+
+[node name="Down" type="RayCast2D" parent="Raycasts"]
+cast_to = Vector2( 0, 30 )
+
+[node name="Left" type="RayCast2D" parent="Raycasts"]
+cast_to = Vector2( -30, 0 )
+
+[node name="Right" type="RayCast2D" parent="Raycasts"]
+cast_to = Vector2( 30, 0 )
+
+[node name="Actions" type="Node" parent="."]
+
+[node name="ShopAction" type="Node" parent="Actions"]
+script = ExtResource( 2 )
+
+[node name="Tween" type="Tween" parent="."]

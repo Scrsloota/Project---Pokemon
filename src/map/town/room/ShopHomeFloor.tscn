@@ -1,0 +1,205 @@
+[gd_scene load_steps=23 format=2]
+
+[ext_resource path="res://src/map/player/Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://src/map/town/items/Door.tscn" type="PackedScene" id=2]
+[ext_resource path="res://assets/map/buildings/shop_and_pokemon_center/友好商店内部_FRLG.png" type="Texture" id=3]
+[ext_resource path="res://src/map/Scene2D.gd" type="Script" id=4]
+[ext_resource path="res://src/map/pawns/ShopKeeper.gd" type="Script" id=5]
+[ext_resource path="res://src/map/pawns/PawnAnim.tscn" type="PackedScene" id=6]
+[ext_resource path="res://assets/sprites/dialogue_balloon.png" type="Texture" id=7]
+[ext_resource path="res://assets/NPC/053-shopkeeper.png" type="Texture" id=8]
+[ext_resource path="res://src/map/pawns/actions/ShopAction.gd" type="Script" id=9]
+[ext_resource path="res://src/items/interface/transaction/ShopMenu.tscn" type="PackedScene" id=10]
+[ext_resource path="res://src/items/interface/transaction/buy/BuyItems.tscn" type="PackedScene" id=11]
+[ext_resource path="res://src/items/interface/transaction/sell/SellItems.tscn" type="PackedScene" id=12]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 8, 88 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 122.103, 26.5188 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 18.1068, 10.1789 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 61.5684, 9.51169 )
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 61.0383, 7.4964 )
+
+[sub_resource type="RectangleShape2D" id=6]
+extents = Vector2( 43.4975, 37.4743 )
+
+[sub_resource type="RectangleShape2D" id=7]
+extents = Vector2( 19.1544, 31.7402 )
+
+[sub_resource type="RectangleShape2D" id=8]
+extents = Vector2( 12.4448, 32.3209 )
+
+[sub_resource type="AnimationNodeStateMachinePlayback" id=10]
+
+[sub_resource type="RectangleShape2D" id=9]
+extents = Vector2( 6, 6.83333 )
+
+[node name="PlayerHomeFloor2" type="Node2D"]
+position = Vector2( -207, -88 )
+scale = Vector2( 8, 8 )
+script = ExtResource( 4 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_left = -208.0
+margin_top = -207.846
+margin_right = 392.0
+margin_bottom = 392.154
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_left = 24.5494
+margin_top = 13.3375
+margin_right = 264.549
+margin_bottom = 161.338
+rect_scale = Vector2( 1.2, 1.2 )
+texture = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 20.0225, 98.7615 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 247.944, 95.9501 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 135.025, 38.6123 )
+shape = SubResource( 2 )
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 65.2175, 137.267 )
+shape = SubResource( 3 )
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 187.693, 176.305 )
+shape = SubResource( 4 )
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 44.0867, 177.825 )
+shape = SubResource( 5 )
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 59.3049, 72.417 )
+shape = SubResource( 6 )
+
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 179.165, 118 )
+shape = SubResource( 7 )
+
+[node name="CollisionShape2D9" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 230.824, 117.082 )
+shape = SubResource( 8 )
+
+[node name="YSort" type="YSort" parent="."]
+
+[node name="Player" parent="YSort" instance=ExtResource( 1 )]
+position = Vector2( 106.625, 117.125 )
+
+[node name="Sprite" parent="YSort/Player" index="1"]
+visible = true
+
+[node name="AnimationTree" parent="YSort/Player" index="4"]
+parameters/playback = SubResource( 10 )
+
+[node name="Camera2D" parent="YSort/Player" index="5"]
+zoom = Vector2( 1.5, 1.5 )
+editor_draw_limits = true
+editor_draw_drag_margin = true
+
+[node name="ShopKeeper" type="StaticBody2D" parent="YSort" groups=["interactive_pawns"]]
+pause_mode = 2
+position = Vector2( 77.125, 77.5 )
+scale = Vector2( 1.5, 1.5 )
+collision_layer = 16
+collision_mask = 0
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Pivot" type="Position2D" parent="YSort/ShopKeeper"]
+
+[node name="PawnAnim" parent="YSort/ShopKeeper/Pivot" instance=ExtResource( 6 )]
+
+[node name="Root" parent="YSort/ShopKeeper/Pivot/PawnAnim" index="1"]
+position = Vector2( 0, 0 )
+
+[node name="Body" parent="YSort/ShopKeeper/Pivot/PawnAnim/Root" index="0"]
+scale = Vector2( 1, 1 )
+texture = ExtResource( 8 )
+hframes = 4
+vframes = 4
+frame = 8
+
+[node name="DialogueBalloon" type="Sprite" parent="YSort/ShopKeeper"]
+position = Vector2( 10, -5 )
+scale = Vector2( 0.3, 0.3 )
+texture = ExtResource( 7 )
+
+[node name="CollisionRange" type="CollisionShape2D" parent="YSort/ShopKeeper"]
+position = Vector2( -0.0833321, 0.666668 )
+shape = SubResource( 9 )
+
+[node name="Raycasts" type="Node2D" parent="YSort/ShopKeeper"]
+
+[node name="Up" type="RayCast2D" parent="YSort/ShopKeeper/Raycasts"]
+cast_to = Vector2( 0, -30 )
+
+[node name="Down" type="RayCast2D" parent="YSort/ShopKeeper/Raycasts"]
+cast_to = Vector2( 0, 30 )
+
+[node name="Left" type="RayCast2D" parent="YSort/ShopKeeper/Raycasts"]
+cast_to = Vector2( -30, 0 )
+
+[node name="Right" type="RayCast2D" parent="YSort/ShopKeeper/Raycasts"]
+cast_to = Vector2( 30, 0 )
+
+[node name="Actions" type="Node" parent="YSort/ShopKeeper"]
+
+[node name="ShopAction" type="Node" parent="YSort/ShopKeeper/Actions"]
+script = ExtResource( 9 )
+
+[node name="ShopMenu" parent="YSort/ShopKeeper/Actions/ShopAction" instance=ExtResource( 10 )]
+
+[node name="BuyMenu" parent="YSort/ShopKeeper/Actions/ShopAction/ShopMenu" instance=ExtResource( 11 )]
+
+[node name="SellMenu" parent="YSort/ShopKeeper/Actions/ShopAction/ShopMenu" instance=ExtResource( 12 )]
+
+[node name="Tween" type="Tween" parent="YSort/ShopKeeper"]
+
+[node name="Door" parent="." instance=ExtResource( 2 )]
+modulate = Color( 0.12549, 0.313726, 0.85098, 1 )
+position = Vector2( 110.023, 145.768 )
+scale = Vector2( 1.5, 1 )
+next_scene_path = "res://src/map/town/Town.tscn"
+is_invisible = true
+spawn_location = Vector2( 28, 224 )
+spawn_direction = Vector2( 0, 1 )
+
+[node name="Sprite" parent="Door" index="0"]
+position = Vector2( -4.423, 23.832 )
+
+[node name="CollisionShape2D" parent="Door" index="2"]
+position = Vector2( 3.06799, 31.982 )
+
+[editable path="YSort/Player"]
+[editable path="YSort/ShopKeeper/Pivot/PawnAnim"]
+[editable path="Door"]

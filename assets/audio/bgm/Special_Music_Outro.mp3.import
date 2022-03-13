@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Special_Music_Outro.mp3-33c73749c3a1e54d13d470e1bf95e2d7.mp3str"
+
+[deps]
+
+source_file="res://assets/audio/bgm/Special_Music_Outro.mp3"
+dest_files=[ "res://.import/Special_Music_Outro.mp3-33c73749c3a1e54d13d470e1bf95e2d7.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

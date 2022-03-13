@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Prove_of_honor.mp3-61c9bd0c1c9a13b16917ed76e6edcfff.mp3str"
+
+[deps]
+
+source_file="res://assets/audio/bgm/Prove_of_honor.mp3"
+dest_files=[ "res://.import/Prove_of_honor.mp3-61c9bd0c1c9a13b16917ed76e6edcfff.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

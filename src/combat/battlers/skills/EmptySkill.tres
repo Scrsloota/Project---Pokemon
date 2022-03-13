@@ -1,0 +1,16 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://src/combat/battlers/skills/Skill.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+name = "_"
+description = ""
+max_pp = 0
+base_damage = 0
+type = 18
+success_chance = 0.0
+stat_modify_oppo = [ 0, 0, 0, 0, 0, 0, 0 ]
+stat_modify_self = [ 0, 0, 0, 0, 0, 0, 0 ]
+nv_status_oppo = 0
+nv_status_chance = 0.0

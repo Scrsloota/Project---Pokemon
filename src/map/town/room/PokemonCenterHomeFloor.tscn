@@ -1,0 +1,2232 @@
+[gd_scene load_steps=98 format=2]
+
+[ext_resource path="res://assets/map/buildings/shop_and_pokemon_center/宝可梦中心_FRLG.png" type="Texture" id=1]
+[ext_resource path="res://src/map/player/Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://src/map/town/items/Door.tscn" type="PackedScene" id=3]
+[ext_resource path="res://src/map/Scene2D.gd" type="Script" id=4]
+[ext_resource path="res://src/map/pawns/PawnAnim.tscn" type="PackedScene" id=5]
+[ext_resource path="res://src/map/town/room/Nurse.gd" type="Script" id=6]
+[ext_resource path="res://assets/NPC/046-nurse.png" type="Texture" id=7]
+[ext_resource path="res://assets/sprites/dialogue_balloon.png" type="Texture" id=8]
+[ext_resource path="res://src/map/town/room/ComputerAction.gd" type="Script" id=9]
+[ext_resource path="res://src/map/town/room/HealAction.gd" type="Script" id=10]
+[ext_resource path="res://assets/ui/ui_arrow_left_right.png" type="Texture" id=11]
+[ext_resource path="res://assets/ui/pokemon Battle/dialog_box.png" type="Texture" id=12]
+[ext_resource path="res://src/items/interface/transaction/SelectArrow.tscn" type="PackedScene" id=13]
+[ext_resource path="res://assets/fonts/pokemon fonts/Pokemon-FRLG.ttf" type="DynamicFontData" id=14]
+[ext_resource path="res://assets/pokemon_mini/1.png" type="Texture" id=15]
+[ext_resource path="res://assets/pokemon_mini/7.png" type="Texture" id=16]
+[ext_resource path="res://assets/pokemon_mini/25.png" type="Texture" id=17]
+[ext_resource path="res://assets/ui/miscellaneous/handbookBackGround.png" type="Texture" id=18]
+[ext_resource path="res://assets/pokemon_mini/4.png" type="Texture" id=19]
+[ext_resource path="res://assets/pokemon_mini/88.png" type="Texture" id=20]
+[ext_resource path="res://assets/pokemon_mini/16.png" type="Texture" id=21]
+[ext_resource path="res://src/interface/computer/ExchangePokemon.tscn" type="PackedScene" id=22]
+[ext_resource path="res://src/map/town/room/Computer.gd" type="Script" id=23]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 8, 88 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 106.031, 16.6751 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 9.06064, 16.0581 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 54.0104, 7.49637 )
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 59.7225, 7.4964 )
+
+[sub_resource type="RectangleShape2D" id=6]
+extents = Vector2( 54.4677, 15.9748 )
+
+[sub_resource type="RectangleShape2D" id=7]
+extents = Vector2( 87.903, 8.6335 )
+
+[sub_resource type="RectangleShape2D" id=8]
+extents = Vector2( 14.364, 23.1292 )
+
+[sub_resource type="AnimationNodeStateMachinePlayback" id=15]
+
+[sub_resource type="Animation" id=9]
+resource_name = "bump"
+length = 0.1
+step = 0.01
+tracks/0/type = "value"
+tracks/0/path = NodePath("Root:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.02, 0.04, 0.06, 0.08, 0.1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( -1.5, -9 ), Vector2( 6.5, 2.5 ), Vector2( -11.5, 8.5 ), Vector2( 4, -5 ), Vector2( 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=10]
+resource_name = "walk"
+length = 0.25
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath("Root:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.15, 0.25 ),
+"transitions": PoolRealArray( 1, 0.414105, 1.30502, 1 ),
+"update": 0,
+"values": [ Vector2( 1.43051e-06, -1.90735e-06 ), Vector2( 1.43051e-06, -1.90735e-06 ), Vector2( 0, 0 ), Vector2( 1.43051e-06, -1.90735e-06 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Root:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.05, 0.15, 0.25 ),
+"transitions": PoolRealArray( 1, 1.00283, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 0.95, 1.05 ), Vector2( 1.05, 0.95 ), Vector2( 1, 1 ) ]
+}
+
+[sub_resource type="RectangleShape2D" id=11]
+extents = Vector2( 6, 6.83333 )
+
+[sub_resource type="DynamicFont" id=14]
+size = 75
+extra_spacing_top = 60
+font_data = ExtResource( 14 )
+
+[sub_resource type="Animation" id=12]
+resource_name = "bump"
+length = 0.1
+step = 0.01
+tracks/0/type = "value"
+tracks/0/path = NodePath("Root:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.02, 0.04, 0.06, 0.08, 0.1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( -1.5, -9 ), Vector2( 6.5, 2.5 ), Vector2( -11.5, 8.5 ), Vector2( 4, -5 ), Vector2( 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=13]
+resource_name = "walk"
+length = 0.25
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath("Root:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.15, 0.25 ),
+"transitions": PoolRealArray( 1, 0.414105, 1.30502, 1 ),
+"update": 0,
+"values": [ Vector2( 1.43051e-06, -1.90735e-06 ), Vector2( 1.43051e-06, -1.90735e-06 ), Vector2( 0, 0 ), Vector2( 1.43051e-06, -1.90735e-06 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Root:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.05, 0.15, 0.25 ),
+"transitions": PoolRealArray( 1, 1.00283, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 0.95, 1.05 ), Vector2( 1.05, 0.95 ), Vector2( 1, 1 ) ]
+}
+
+[sub_resource type="DynamicFont" id=18]
+size = 76
+font_data = ExtResource( 14 )
+
+[sub_resource type="Animation" id=19]
+resource_name = "bump"
+length = 0.1
+step = 0.01
+tracks/0/type = "value"
+tracks/0/path = NodePath("Root:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.02, 0.04, 0.06, 0.08, 0.1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( -1.5, -9 ), Vector2( 6.5, 2.5 ), Vector2( -11.5, 8.5 ), Vector2( 4, -5 ), Vector2( 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=20]
+resource_name = "walk"
+length = 0.25
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath("Root:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.15, 0.25 ),
+"transitions": PoolRealArray( 1, 0.414105, 1.30502, 1 ),
+"update": 0,
+"values": [ Vector2( 1.43051e-06, -1.90735e-06 ), Vector2( 1.43051e-06, -1.90735e-06 ), Vector2( 0, 0 ), Vector2( 1.43051e-06, -1.90735e-06 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Root:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.05, 0.15, 0.25 ),
+"transitions": PoolRealArray( 1, 1.00283, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 0.95, 1.05 ), Vector2( 1.05, 0.95 ), Vector2( 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=21]
+resource_name = "bump"
+length = 0.1
+step = 0.01
+tracks/0/type = "value"
+tracks/0/path = NodePath("Root:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.02, 0.04, 0.06, 0.08, 0.1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( -1.5, -9 ), Vector2( 6.5, 2.5 ), Vector2( -11.5, 8.5 ), Vector2( 4, -5 ), Vector2( 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=22]
+resource_name = "walk"
+length = 0.25
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath("Root:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.15, 0.25 ),
+"transitions": PoolRealArray( 1, 0.414105, 1.30502, 1 ),
+"update": 0,
+"values": [ Vector2( 1.43051e-06, -1.90735e-06 ), Vector2( 1.43051e-06, -1.90735e-06 ), Vector2( 0, 0 ), Vector2( 1.43051e-06, -1.90735e-06 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Root:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.05, 0.15, 0.25 ),
+"transitions": PoolRealArray( 1, 1.00283, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 0.95, 1.05 ), Vector2( 1.05, 0.95 ), Vector2( 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=23]
+resource_name = "bump"
+length = 0.1
+step = 0.01
+tracks/0/type = "value"
+tracks/0/path = NodePath("Root:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.02, 0.04, 0.06, 0.08, 0.1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( -1.5, -9 ), Vector2( 6.5, 2.5 ), Vector2( -11.5, 8.5 ), Vector2( 4, -5 ), Vector2( 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=24]
+resource_name = "walk"
+length = 0.25
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath("Root:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.15, 0.25 ),
+"transitions": PoolRealArray( 1, 0.414105, 1.30502, 1 ),
+"update": 0,
+"values": [ Vector2( 1.43051e-06, -1.90735e-06 ), Vector2( 1.43051e-06, -1.90735e-06 ), Vector2( 0, 0 ), Vector2( 1.43051e-06, -1.90735e-06 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Root:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.05, 0.15, 0.25 ),
+"transitions": PoolRealArray( 1, 1.00283, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 0.95, 1.05 ), Vector2( 1.05, 0.95 ), Vector2( 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=25]
+resource_name = "bump"
+length = 0.1
+step = 0.01
+tracks/0/type = "value"
+tracks/0/path = NodePath("Root:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.02, 0.04, 0.06, 0.08, 0.1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( -1.5, -9 ), Vector2( 6.5, 2.5 ), Vector2( -11.5, 8.5 ), Vector2( 4, -5 ), Vector2( 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=26]
+resource_name = "walk"
+length = 0.25
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath("Root:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.15, 0.25 ),
+"transitions": PoolRealArray( 1, 0.414105, 1.30502, 1 ),
+"update": 0,
+"values": [ Vector2( 1.43051e-06, -1.90735e-06 ), Vector2( 1.43051e-06, -1.90735e-06 ), Vector2( 0, 0 ), Vector2( 1.43051e-06, -1.90735e-06 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Root:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.05, 0.15, 0.25 ),
+"transitions": PoolRealArray( 1, 1.00283, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 0.95, 1.05 ), Vector2( 1.05, 0.95 ), Vector2( 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=27]
+resource_name = "bump"
+length = 0.1
+step = 0.01
+tracks/0/type = "value"
+tracks/0/path = NodePath("Root:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.02, 0.04, 0.06, 0.08, 0.1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( -1.5, -9 ), Vector2( 6.5, 2.5 ), Vector2( -11.5, 8.5 ), Vector2( 4, -5 ), Vector2( 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=28]
+resource_name = "walk"
+length = 0.25
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath("Root:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.15, 0.25 ),
+"transitions": PoolRealArray( 1, 0.414105, 1.30502, 1 ),
+"update": 0,
+"values": [ Vector2( 1.43051e-06, -1.90735e-06 ), Vector2( 1.43051e-06, -1.90735e-06 ), Vector2( 0, 0 ), Vector2( 1.43051e-06, -1.90735e-06 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Root:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.05, 0.15, 0.25 ),
+"transitions": PoolRealArray( 1, 1.00283, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 0.95, 1.05 ), Vector2( 1.05, 0.95 ), Vector2( 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=29]
+resource_name = "bump"
+length = 0.1
+step = 0.01
+tracks/0/type = "value"
+tracks/0/path = NodePath("Root:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.02, 0.04, 0.06, 0.08, 0.1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( -1.5, -9 ), Vector2( 6.5, 2.5 ), Vector2( -11.5, 8.5 ), Vector2( 4, -5 ), Vector2( 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=30]
+resource_name = "walk"
+length = 0.25
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath("Root:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.15, 0.25 ),
+"transitions": PoolRealArray( 1, 0.414105, 1.30502, 1 ),
+"update": 0,
+"values": [ Vector2( 1.43051e-06, -1.90735e-06 ), Vector2( 1.43051e-06, -1.90735e-06 ), Vector2( 0, 0 ), Vector2( 1.43051e-06, -1.90735e-06 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Root:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.05, 0.15, 0.25 ),
+"transitions": PoolRealArray( 1, 1.00283, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 0.95, 1.05 ), Vector2( 1.05, 0.95 ), Vector2( 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=31]
+resource_name = "bump"
+length = 0.1
+step = 0.01
+tracks/0/type = "value"
+tracks/0/path = NodePath("Root:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.02, 0.04, 0.06, 0.08, 0.1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( -1.5, -9 ), Vector2( 6.5, 2.5 ), Vector2( -11.5, 8.5 ), Vector2( 4, -5 ), Vector2( 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=32]
+resource_name = "walk"
+length = 0.25
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath("Root:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.15, 0.25 ),
+"transitions": PoolRealArray( 1, 0.414105, 1.30502, 1 ),
+"update": 0,
+"values": [ Vector2( 1.43051e-06, -1.90735e-06 ), Vector2( 1.43051e-06, -1.90735e-06 ), Vector2( 0, 0 ), Vector2( 1.43051e-06, -1.90735e-06 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Root:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.05, 0.15, 0.25 ),
+"transitions": PoolRealArray( 1, 1.00283, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 0.95, 1.05 ), Vector2( 1.05, 0.95 ), Vector2( 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=33]
+resource_name = "bump"
+length = 0.1
+step = 0.01
+tracks/0/type = "value"
+tracks/0/path = NodePath("Root:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.02, 0.04, 0.06, 0.08, 0.1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( -1.5, -9 ), Vector2( 6.5, 2.5 ), Vector2( -11.5, 8.5 ), Vector2( 4, -5 ), Vector2( 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=34]
+resource_name = "walk"
+length = 0.25
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath("Root:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.15, 0.25 ),
+"transitions": PoolRealArray( 1, 0.414105, 1.30502, 1 ),
+"update": 0,
+"values": [ Vector2( 1.43051e-06, -1.90735e-06 ), Vector2( 1.43051e-06, -1.90735e-06 ), Vector2( 0, 0 ), Vector2( 1.43051e-06, -1.90735e-06 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Root:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.05, 0.15, 0.25 ),
+"transitions": PoolRealArray( 1, 1.00283, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 0.95, 1.05 ), Vector2( 1.05, 0.95 ), Vector2( 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=35]
+resource_name = "bump"
+length = 0.1
+step = 0.01
+tracks/0/type = "value"
+tracks/0/path = NodePath("Root:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.02, 0.04, 0.06, 0.08, 0.1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( -1.5, -9 ), Vector2( 6.5, 2.5 ), Vector2( -11.5, 8.5 ), Vector2( 4, -5 ), Vector2( 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=36]
+resource_name = "walk"
+length = 0.25
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath("Root:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.15, 0.25 ),
+"transitions": PoolRealArray( 1, 0.414105, 1.30502, 1 ),
+"update": 0,
+"values": [ Vector2( 1.43051e-06, -1.90735e-06 ), Vector2( 1.43051e-06, -1.90735e-06 ), Vector2( 0, 0 ), Vector2( 1.43051e-06, -1.90735e-06 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Root:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.05, 0.15, 0.25 ),
+"transitions": PoolRealArray( 1, 1.00283, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 0.95, 1.05 ), Vector2( 1.05, 0.95 ), Vector2( 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=37]
+resource_name = "bump"
+length = 0.1
+step = 0.01
+tracks/0/type = "value"
+tracks/0/path = NodePath("Root:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.02, 0.04, 0.06, 0.08, 0.1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( -1.5, -9 ), Vector2( 6.5, 2.5 ), Vector2( -11.5, 8.5 ), Vector2( 4, -5 ), Vector2( 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=38]
+resource_name = "walk"
+length = 0.25
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath("Root:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.15, 0.25 ),
+"transitions": PoolRealArray( 1, 0.414105, 1.30502, 1 ),
+"update": 0,
+"values": [ Vector2( 1.43051e-06, -1.90735e-06 ), Vector2( 1.43051e-06, -1.90735e-06 ), Vector2( 0, 0 ), Vector2( 1.43051e-06, -1.90735e-06 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Root:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.05, 0.15, 0.25 ),
+"transitions": PoolRealArray( 1, 1.00283, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 0.95, 1.05 ), Vector2( 1.05, 0.95 ), Vector2( 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=39]
+resource_name = "bump"
+length = 0.1
+step = 0.01
+tracks/0/type = "value"
+tracks/0/path = NodePath("Root:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.02, 0.04, 0.06, 0.08, 0.1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( -1.5, -9 ), Vector2( 6.5, 2.5 ), Vector2( -11.5, 8.5 ), Vector2( 4, -5 ), Vector2( 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=40]
+resource_name = "walk"
+length = 0.25
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath("Root:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.15, 0.25 ),
+"transitions": PoolRealArray( 1, 0.414105, 1.30502, 1 ),
+"update": 0,
+"values": [ Vector2( 1.43051e-06, -1.90735e-06 ), Vector2( 1.43051e-06, -1.90735e-06 ), Vector2( 0, 0 ), Vector2( 1.43051e-06, -1.90735e-06 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Root:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.05, 0.15, 0.25 ),
+"transitions": PoolRealArray( 1, 1.00283, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 0.95, 1.05 ), Vector2( 1.05, 0.95 ), Vector2( 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=41]
+resource_name = "bump"
+length = 0.1
+step = 0.01
+tracks/0/type = "value"
+tracks/0/path = NodePath("Root:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.02, 0.04, 0.06, 0.08, 0.1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( -1.5, -9 ), Vector2( 6.5, 2.5 ), Vector2( -11.5, 8.5 ), Vector2( 4, -5 ), Vector2( 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=42]
+resource_name = "walk"
+length = 0.25
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath("Root:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.15, 0.25 ),
+"transitions": PoolRealArray( 1, 0.414105, 1.30502, 1 ),
+"update": 0,
+"values": [ Vector2( 1.43051e-06, -1.90735e-06 ), Vector2( 1.43051e-06, -1.90735e-06 ), Vector2( 0, 0 ), Vector2( 1.43051e-06, -1.90735e-06 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Root:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.05, 0.15, 0.25 ),
+"transitions": PoolRealArray( 1, 1.00283, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 0.95, 1.05 ), Vector2( 1.05, 0.95 ), Vector2( 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=43]
+resource_name = "bump"
+length = 0.1
+step = 0.01
+tracks/0/type = "value"
+tracks/0/path = NodePath("Root:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.02, 0.04, 0.06, 0.08, 0.1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( -1.5, -9 ), Vector2( 6.5, 2.5 ), Vector2( -11.5, 8.5 ), Vector2( 4, -5 ), Vector2( 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=44]
+resource_name = "walk"
+length = 0.25
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath("Root:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.15, 0.25 ),
+"transitions": PoolRealArray( 1, 0.414105, 1.30502, 1 ),
+"update": 0,
+"values": [ Vector2( 1.43051e-06, -1.90735e-06 ), Vector2( 1.43051e-06, -1.90735e-06 ), Vector2( 0, 0 ), Vector2( 1.43051e-06, -1.90735e-06 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Root:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.05, 0.15, 0.25 ),
+"transitions": PoolRealArray( 1, 1.00283, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 0.95, 1.05 ), Vector2( 1.05, 0.95 ), Vector2( 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=45]
+resource_name = "bump"
+length = 0.1
+step = 0.01
+tracks/0/type = "value"
+tracks/0/path = NodePath("Root:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.02, 0.04, 0.06, 0.08, 0.1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( -1.5, -9 ), Vector2( 6.5, 2.5 ), Vector2( -11.5, 8.5 ), Vector2( 4, -5 ), Vector2( 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=46]
+resource_name = "walk"
+length = 0.25
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath("Root:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.15, 0.25 ),
+"transitions": PoolRealArray( 1, 0.414105, 1.30502, 1 ),
+"update": 0,
+"values": [ Vector2( 1.43051e-06, -1.90735e-06 ), Vector2( 1.43051e-06, -1.90735e-06 ), Vector2( 0, 0 ), Vector2( 1.43051e-06, -1.90735e-06 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Root:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.05, 0.15, 0.25 ),
+"transitions": PoolRealArray( 1, 1.00283, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 0.95, 1.05 ), Vector2( 1.05, 0.95 ), Vector2( 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=47]
+resource_name = "bump"
+length = 0.1
+step = 0.01
+tracks/0/type = "value"
+tracks/0/path = NodePath("Root:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.02, 0.04, 0.06, 0.08, 0.1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( -1.5, -9 ), Vector2( 6.5, 2.5 ), Vector2( -11.5, 8.5 ), Vector2( 4, -5 ), Vector2( 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=48]
+resource_name = "walk"
+length = 0.25
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath("Root:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.15, 0.25 ),
+"transitions": PoolRealArray( 1, 0.414105, 1.30502, 1 ),
+"update": 0,
+"values": [ Vector2( 1.43051e-06, -1.90735e-06 ), Vector2( 1.43051e-06, -1.90735e-06 ), Vector2( 0, 0 ), Vector2( 1.43051e-06, -1.90735e-06 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Root:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.05, 0.15, 0.25 ),
+"transitions": PoolRealArray( 1, 1.00283, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 0.95, 1.05 ), Vector2( 1.05, 0.95 ), Vector2( 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=49]
+resource_name = "bump"
+length = 0.1
+step = 0.01
+tracks/0/type = "value"
+tracks/0/path = NodePath("Root:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.02, 0.04, 0.06, 0.08, 0.1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( -1.5, -9 ), Vector2( 6.5, 2.5 ), Vector2( -11.5, 8.5 ), Vector2( 4, -5 ), Vector2( 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=50]
+resource_name = "walk"
+length = 0.25
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath("Root:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.15, 0.25 ),
+"transitions": PoolRealArray( 1, 0.414105, 1.30502, 1 ),
+"update": 0,
+"values": [ Vector2( 1.43051e-06, -1.90735e-06 ), Vector2( 1.43051e-06, -1.90735e-06 ), Vector2( 0, 0 ), Vector2( 1.43051e-06, -1.90735e-06 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Root:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.05, 0.15, 0.25 ),
+"transitions": PoolRealArray( 1, 1.00283, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 0.95, 1.05 ), Vector2( 1.05, 0.95 ), Vector2( 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=51]
+resource_name = "bump"
+length = 0.1
+step = 0.01
+tracks/0/type = "value"
+tracks/0/path = NodePath("Root:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.02, 0.04, 0.06, 0.08, 0.1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( -1.5, -9 ), Vector2( 6.5, 2.5 ), Vector2( -11.5, 8.5 ), Vector2( 4, -5 ), Vector2( 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=52]
+resource_name = "walk"
+length = 0.25
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath("Root:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.15, 0.25 ),
+"transitions": PoolRealArray( 1, 0.414105, 1.30502, 1 ),
+"update": 0,
+"values": [ Vector2( 1.43051e-06, -1.90735e-06 ), Vector2( 1.43051e-06, -1.90735e-06 ), Vector2( 0, 0 ), Vector2( 1.43051e-06, -1.90735e-06 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Root:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.05, 0.15, 0.25 ),
+"transitions": PoolRealArray( 1, 1.00283, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 0.95, 1.05 ), Vector2( 1.05, 0.95 ), Vector2( 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=53]
+resource_name = "bump"
+length = 0.1
+step = 0.01
+tracks/0/type = "value"
+tracks/0/path = NodePath("Root:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.02, 0.04, 0.06, 0.08, 0.1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( -1.5, -9 ), Vector2( 6.5, 2.5 ), Vector2( -11.5, 8.5 ), Vector2( 4, -5 ), Vector2( 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=54]
+resource_name = "walk"
+length = 0.25
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath("Root:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.15, 0.25 ),
+"transitions": PoolRealArray( 1, 0.414105, 1.30502, 1 ),
+"update": 0,
+"values": [ Vector2( 1.43051e-06, -1.90735e-06 ), Vector2( 1.43051e-06, -1.90735e-06 ), Vector2( 0, 0 ), Vector2( 1.43051e-06, -1.90735e-06 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Root:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.05, 0.15, 0.25 ),
+"transitions": PoolRealArray( 1, 1.00283, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 0.95, 1.05 ), Vector2( 1.05, 0.95 ), Vector2( 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=55]
+resource_name = "bump"
+length = 0.1
+step = 0.01
+tracks/0/type = "value"
+tracks/0/path = NodePath("Root:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.02, 0.04, 0.06, 0.08, 0.1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( -1.5, -9 ), Vector2( 6.5, 2.5 ), Vector2( -11.5, 8.5 ), Vector2( 4, -5 ), Vector2( 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=56]
+resource_name = "walk"
+length = 0.25
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath("Root:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.15, 0.25 ),
+"transitions": PoolRealArray( 1, 0.414105, 1.30502, 1 ),
+"update": 0,
+"values": [ Vector2( 1.43051e-06, -1.90735e-06 ), Vector2( 1.43051e-06, -1.90735e-06 ), Vector2( 0, 0 ), Vector2( 1.43051e-06, -1.90735e-06 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Root:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.05, 0.15, 0.25 ),
+"transitions": PoolRealArray( 1, 1.00283, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 0.95, 1.05 ), Vector2( 1.05, 0.95 ), Vector2( 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=57]
+resource_name = "bump"
+length = 0.1
+step = 0.01
+tracks/0/type = "value"
+tracks/0/path = NodePath("Root:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.02, 0.04, 0.06, 0.08, 0.1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( -1.5, -9 ), Vector2( 6.5, 2.5 ), Vector2( -11.5, 8.5 ), Vector2( 4, -5 ), Vector2( 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=58]
+resource_name = "walk"
+length = 0.25
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath("Root:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.15, 0.25 ),
+"transitions": PoolRealArray( 1, 0.414105, 1.30502, 1 ),
+"update": 0,
+"values": [ Vector2( 1.43051e-06, -1.90735e-06 ), Vector2( 1.43051e-06, -1.90735e-06 ), Vector2( 0, 0 ), Vector2( 1.43051e-06, -1.90735e-06 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Root:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.05, 0.15, 0.25 ),
+"transitions": PoolRealArray( 1, 1.00283, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 0.95, 1.05 ), Vector2( 1.05, 0.95 ), Vector2( 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=59]
+resource_name = "bump"
+length = 0.1
+step = 0.01
+tracks/0/type = "value"
+tracks/0/path = NodePath("Root:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.02, 0.04, 0.06, 0.08, 0.1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( -1.5, -9 ), Vector2( 6.5, 2.5 ), Vector2( -11.5, 8.5 ), Vector2( 4, -5 ), Vector2( 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=60]
+resource_name = "walk"
+length = 0.25
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath("Root:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.15, 0.25 ),
+"transitions": PoolRealArray( 1, 0.414105, 1.30502, 1 ),
+"update": 0,
+"values": [ Vector2( 1.43051e-06, -1.90735e-06 ), Vector2( 1.43051e-06, -1.90735e-06 ), Vector2( 0, 0 ), Vector2( 1.43051e-06, -1.90735e-06 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Root:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.05, 0.15, 0.25 ),
+"transitions": PoolRealArray( 1, 1.00283, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 0.95, 1.05 ), Vector2( 1.05, 0.95 ), Vector2( 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=61]
+resource_name = "bump"
+length = 0.1
+step = 0.01
+tracks/0/type = "value"
+tracks/0/path = NodePath("Root:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.02, 0.04, 0.06, 0.08, 0.1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( -1.5, -9 ), Vector2( 6.5, 2.5 ), Vector2( -11.5, 8.5 ), Vector2( 4, -5 ), Vector2( 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=62]
+resource_name = "walk"
+length = 0.25
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath("Root:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.15, 0.25 ),
+"transitions": PoolRealArray( 1, 0.414105, 1.30502, 1 ),
+"update": 0,
+"values": [ Vector2( 1.43051e-06, -1.90735e-06 ), Vector2( 1.43051e-06, -1.90735e-06 ), Vector2( 0, 0 ), Vector2( 1.43051e-06, -1.90735e-06 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Root:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.05, 0.15, 0.25 ),
+"transitions": PoolRealArray( 1, 1.00283, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 0.95, 1.05 ), Vector2( 1.05, 0.95 ), Vector2( 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=63]
+resource_name = "bump"
+length = 0.1
+step = 0.01
+tracks/0/type = "value"
+tracks/0/path = NodePath("Root:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.02, 0.04, 0.06, 0.08, 0.1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( -1.5, -9 ), Vector2( 6.5, 2.5 ), Vector2( -11.5, 8.5 ), Vector2( 4, -5 ), Vector2( 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=64]
+resource_name = "walk"
+length = 0.25
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath("Root:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.15, 0.25 ),
+"transitions": PoolRealArray( 1, 0.414105, 1.30502, 1 ),
+"update": 0,
+"values": [ Vector2( 1.43051e-06, -1.90735e-06 ), Vector2( 1.43051e-06, -1.90735e-06 ), Vector2( 0, 0 ), Vector2( 1.43051e-06, -1.90735e-06 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Root:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.05, 0.15, 0.25 ),
+"transitions": PoolRealArray( 1, 1.00283, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 0.95, 1.05 ), Vector2( 1.05, 0.95 ), Vector2( 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=65]
+resource_name = "bump"
+length = 0.1
+step = 0.01
+tracks/0/type = "value"
+tracks/0/path = NodePath("Root:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.02, 0.04, 0.06, 0.08, 0.1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( -1.5, -9 ), Vector2( 6.5, 2.5 ), Vector2( -11.5, 8.5 ), Vector2( 4, -5 ), Vector2( 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=66]
+resource_name = "walk"
+length = 0.25
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath("Root:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.15, 0.25 ),
+"transitions": PoolRealArray( 1, 0.414105, 1.30502, 1 ),
+"update": 0,
+"values": [ Vector2( 1.43051e-06, -1.90735e-06 ), Vector2( 1.43051e-06, -1.90735e-06 ), Vector2( 0, 0 ), Vector2( 1.43051e-06, -1.90735e-06 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Root:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.05, 0.15, 0.25 ),
+"transitions": PoolRealArray( 1, 1.00283, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 0.95, 1.05 ), Vector2( 1.05, 0.95 ), Vector2( 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=67]
+resource_name = "bump"
+length = 0.1
+step = 0.01
+tracks/0/type = "value"
+tracks/0/path = NodePath("Root:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.02, 0.04, 0.06, 0.08, 0.1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( -1.5, -9 ), Vector2( 6.5, 2.5 ), Vector2( -11.5, 8.5 ), Vector2( 4, -5 ), Vector2( 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=68]
+resource_name = "walk"
+length = 0.25
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath("Root:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.15, 0.25 ),
+"transitions": PoolRealArray( 1, 0.414105, 1.30502, 1 ),
+"update": 0,
+"values": [ Vector2( 1.43051e-06, -1.90735e-06 ), Vector2( 1.43051e-06, -1.90735e-06 ), Vector2( 0, 0 ), Vector2( 1.43051e-06, -1.90735e-06 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Root:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.05, 0.15, 0.25 ),
+"transitions": PoolRealArray( 1, 1.00283, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 0.95, 1.05 ), Vector2( 1.05, 0.95 ), Vector2( 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=69]
+resource_name = "bump"
+length = 0.1
+step = 0.01
+tracks/0/type = "value"
+tracks/0/path = NodePath("Root:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.02, 0.04, 0.06, 0.08, 0.1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( -1.5, -9 ), Vector2( 6.5, 2.5 ), Vector2( -11.5, 8.5 ), Vector2( 4, -5 ), Vector2( 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=70]
+resource_name = "walk"
+length = 0.25
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath("Root:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.15, 0.25 ),
+"transitions": PoolRealArray( 1, 0.414105, 1.30502, 1 ),
+"update": 0,
+"values": [ Vector2( 1.43051e-06, -1.90735e-06 ), Vector2( 1.43051e-06, -1.90735e-06 ), Vector2( 0, 0 ), Vector2( 1.43051e-06, -1.90735e-06 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Root:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.05, 0.15, 0.25 ),
+"transitions": PoolRealArray( 1, 1.00283, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 0.95, 1.05 ), Vector2( 1.05, 0.95 ), Vector2( 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=71]
+resource_name = "bump"
+length = 0.1
+step = 0.01
+tracks/0/type = "value"
+tracks/0/path = NodePath("Root:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.02, 0.04, 0.06, 0.08, 0.1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( -1.5, -9 ), Vector2( 6.5, 2.5 ), Vector2( -11.5, 8.5 ), Vector2( 4, -5 ), Vector2( 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=72]
+resource_name = "walk"
+length = 0.25
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath("Root:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.15, 0.25 ),
+"transitions": PoolRealArray( 1, 0.414105, 1.30502, 1 ),
+"update": 0,
+"values": [ Vector2( 1.43051e-06, -1.90735e-06 ), Vector2( 1.43051e-06, -1.90735e-06 ), Vector2( 0, 0 ), Vector2( 1.43051e-06, -1.90735e-06 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Root:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.05, 0.15, 0.25 ),
+"transitions": PoolRealArray( 1, 1.00283, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 0.95, 1.05 ), Vector2( 1.05, 0.95 ), Vector2( 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=73]
+resource_name = "bump"
+length = 0.1
+step = 0.01
+tracks/0/type = "value"
+tracks/0/path = NodePath("Root:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.02, 0.04, 0.06, 0.08, 0.1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( -1.5, -9 ), Vector2( 6.5, 2.5 ), Vector2( -11.5, 8.5 ), Vector2( 4, -5 ), Vector2( 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=74]
+resource_name = "walk"
+length = 0.25
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath("Root:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.15, 0.25 ),
+"transitions": PoolRealArray( 1, 0.414105, 1.30502, 1 ),
+"update": 0,
+"values": [ Vector2( 1.43051e-06, -1.90735e-06 ), Vector2( 1.43051e-06, -1.90735e-06 ), Vector2( 0, 0 ), Vector2( 1.43051e-06, -1.90735e-06 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Root:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.05, 0.15, 0.25 ),
+"transitions": PoolRealArray( 1, 1.00283, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 0.95, 1.05 ), Vector2( 1.05, 0.95 ), Vector2( 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=16]
+resource_name = "SETUP"
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=17]
+resource_name = "wiggle"
+length = 0.6
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 0.353553, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( -8, 0 ) ]
+}
+
+[node name="PokemonCenterHomeFloor" type="Node2D"]
+scale = Vector2( 8, 8 )
+script = ExtResource( 4 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_left = -208.0
+margin_top = -207.646
+margin_right = 392.0
+margin_bottom = 392.354
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_left = -1.52588e-05
+margin_top = 0.707108
+margin_right = 240.0
+margin_bottom = 148.707
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+visible = false
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 5.78859, 83.4038 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 233.588, 72.0901 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 120.042, 17.636 )
+shape = SubResource( 2 )
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 23.2649, 105.054 )
+shape = SubResource( 3 )
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 187.265, 152.707 )
+shape = SubResource( 4 )
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 46.1421, 152.354 )
+shape = SubResource( 5 )
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 119.986, 47.6949 )
+shape = SubResource( 6 )
+
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 103.875, 32.2218 )
+shape = SubResource( 7 )
+
+[node name="CollisionShape2D9" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 192.617, 104.347 )
+shape = SubResource( 8 )
+
+[node name="YSort" type="YSort" parent="."]
+
+[node name="Player" parent="YSort" instance=ExtResource( 2 )]
+position = Vector2( 111, 96 )
+
+[node name="AnimationTree" parent="YSort/Player" index="4"]
+parameters/playback = SubResource( 15 )
+
+[node name="Camera2D" parent="YSort/Player" index="5"]
+zoom = Vector2( 1.5, 1.5 )
+editor_draw_limits = true
+editor_draw_drag_margin = true
+
+[node name="Nurse" type="StaticBody2D" parent="YSort" groups=["interactive_pawns"]]
+pause_mode = 2
+position = Vector2( 121.125, 33 )
+scale = Vector2( 1.5, 1.5 )
+collision_layer = 16
+collision_mask = 0
+script = ExtResource( 6 )
+
+[node name="Pivot" type="Position2D" parent="YSort/Nurse"]
+
+[node name="PawnAnim" parent="YSort/Nurse/Pivot" instance=ExtResource( 5 )]
+
+[node name="AnimationPlayer" parent="YSort/Nurse/Pivot/PawnAnim" index="0"]
+anims/bump = SubResource( 9 )
+anims/walk = SubResource( 10 )
+
+[node name="Body" parent="YSort/Nurse/Pivot/PawnAnim/Root" index="0"]
+scale = Vector2( 1, 1 )
+texture = ExtResource( 7 )
+hframes = 4
+vframes = 4
+frame = 2
+
+[node name="DialogueBalloon" type="Sprite" parent="YSort/Nurse"]
+position = Vector2( 10, -5 )
+scale = Vector2( 0.3, 0.3 )
+texture = ExtResource( 8 )
+
+[node name="CollisionRange" type="CollisionShape2D" parent="YSort/Nurse"]
+position = Vector2( -0.0833321, 0.666668 )
+shape = SubResource( 11 )
+
+[node name="Raycasts" type="Node2D" parent="YSort/Nurse"]
+
+[node name="Up" type="RayCast2D" parent="YSort/Nurse/Raycasts"]
+cast_to = Vector2( 0, -30 )
+
+[node name="Down" type="RayCast2D" parent="YSort/Nurse/Raycasts"]
+cast_to = Vector2( 0, 30 )
+
+[node name="Left" type="RayCast2D" parent="YSort/Nurse/Raycasts"]
+cast_to = Vector2( -30, 0 )
+
+[node name="Right" type="RayCast2D" parent="YSort/Nurse/Raycasts"]
+cast_to = Vector2( 30, 0 )
+
+[node name="Actions" type="Node" parent="YSort/Nurse"]
+
+[node name="HealAction" type="Node" parent="YSort/Nurse/Actions"]
+script = ExtResource( 10 )
+
+[node name="DialogBox" type="Control" parent="YSort/Nurse/Actions/HealAction"]
+visible = false
+margin_top = 740.0
+margin_right = 1920.0
+margin_bottom = 1097.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Box" type="TextureRect" parent="YSort/Nurse/Actions/HealAction/DialogBox"]
+margin_top = 46.0
+margin_right = 1915.0
+margin_bottom = 339.0
+texture = ExtResource( 12 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Message" type="Label" parent="YSort/Nurse/Actions/HealAction/DialogBox/Box"]
+margin_left = 40.0
+margin_top = -6.0
+margin_right = 1881.0
+margin_bottom = 272.0
+custom_colors/font_color = Color( 0.2, 0.2, 0.2, 1 )
+custom_constants/line_spacing = 20
+custom_fonts/font = SubResource( 14 )
+text = " Hello traveller! Do you want to heal your pokemons?
+                       Yes                                  No"
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SelectArrow" parent="YSort/Nurse/Actions/HealAction" instance=ExtResource( 13 )]
+visible = false
+margin_left = 430.0
+margin_top = 980.0
+margin_right = 530.0
+margin_bottom = 1080.0
+
+[node name="Sprite" parent="YSort/Nurse/Actions/HealAction/SelectArrow" index="0"]
+position = Vector2( 1, 0 )
+scale = Vector2( 6, 6 )
+texture = ExtResource( 11 )
+
+[node name="Tween" type="Tween" parent="YSort/Nurse"]
+
+[node name="Computer" type="StaticBody2D" parent="YSort" groups=["interactive_pawns"]]
+pause_mode = 2
+position = Vector2( 183, 28 )
+scale = Vector2( 1.5, 1.5 )
+collision_layer = 16
+collision_mask = 0
+script = ExtResource( 23 )
+
+[node name="Pivot" type="Position2D" parent="YSort/Computer"]
+
+[node name="PawnAnim" parent="YSort/Computer/Pivot" instance=ExtResource( 5 )]
+
+[node name="AnimationPlayer" parent="YSort/Computer/Pivot/PawnAnim" index="0"]
+anims/bump = SubResource( 12 )
+anims/walk = SubResource( 13 )
+
+[node name="Root" parent="YSort/Computer/Pivot/PawnAnim" index="1"]
+position = Vector2( 0, 0 )
+
+[node name="Body" parent="YSort/Computer/Pivot/PawnAnim/Root" index="0"]
+scale = Vector2( 1, 1 )
+texture = null
+hframes = 4
+vframes = 4
+frame = 2
+
+[node name="DialogueBalloon" type="Sprite" parent="YSort/Computer"]
+position = Vector2( 10, -5 )
+scale = Vector2( 0.3, 0.3 )
+texture = ExtResource( 8 )
+
+[node name="CollisionRange" type="CollisionShape2D" parent="YSort/Computer"]
+visible = false
+position = Vector2( -0.0833321, 0.666668 )
+shape = SubResource( 11 )
+
+[node name="Raycasts" type="Node2D" parent="YSort/Computer"]
+
+[node name="Up" type="RayCast2D" parent="YSort/Computer/Raycasts"]
+cast_to = Vector2( 0, -30 )
+
+[node name="Down" type="RayCast2D" parent="YSort/Computer/Raycasts"]
+cast_to = Vector2( 0, 30 )
+
+[node name="Left" type="RayCast2D" parent="YSort/Computer/Raycasts"]
+cast_to = Vector2( -30, 0 )
+
+[node name="Right" type="RayCast2D" parent="YSort/Computer/Raycasts"]
+cast_to = Vector2( 30, 0 )
+
+[node name="Actions" type="Node" parent="YSort/Computer"]
+
+[node name="ComputerAction" type="Node" parent="YSort/Computer/Actions"]
+script = ExtResource( 9 )
+
+[node name="Control" type="Control" parent="YSort/Computer/Actions/ComputerAction"]
+visible = false
+margin_right = 40.0
+margin_bottom = 40.0
+rect_scale = Vector2( 0.6, 0.6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BackGround" type="TextureRect" parent="YSort/Computer/Actions/ComputerAction/Control"]
+margin_right = 1000.0
+margin_bottom = 1000.0
+texture = ExtResource( 18 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="YSort/Computer/Actions/ComputerAction/Control/BackGround"]
+margin_left = 140.0
+margin_top = 85.0
+margin_right = 840.0
+margin_bottom = 185.0
+custom_colors/font_color = Color( 0.2, 0.2, 0.2, 1 )
+custom_fonts/font = SubResource( 18 )
+text = " Pokemon Depository"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PokemonList" type="Control" parent="YSort/Computer/Actions/ComputerAction/Control"]
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BigIcon" parent="YSort/Computer/Actions/ComputerAction/Control/PokemonList" instance=ExtResource( 5 )]
+scale = Vector2( 1, 1 )
+
+[node name="AnimationPlayer" parent="YSort/Computer/Actions/ComputerAction/Control/PokemonList/BigIcon" index="0"]
+anims/bump = SubResource( 19 )
+anims/walk = SubResource( 20 )
+
+[node name="Root" parent="YSort/Computer/Actions/ComputerAction/Control/PokemonList/BigIcon" index="1"]
+position = Vector2( 0, 0 )
+
+[node name="Body" parent="YSort/Computer/Actions/ComputerAction/Control/PokemonList/BigIcon/Root" index="0"]
+position = Vector2( 120, 320 )
+scale = Vector2( 2.4, 2.4 )
+texture = ExtResource( 15 )
+
+[node name="BigIcon2" parent="YSort/Computer/Actions/ComputerAction/Control/PokemonList" instance=ExtResource( 5 )]
+scale = Vector2( 1, 1 )
+
+[node name="AnimationPlayer" parent="YSort/Computer/Actions/ComputerAction/Control/PokemonList/BigIcon2" index="0"]
+anims/bump = SubResource( 21 )
+anims/walk = SubResource( 22 )
+
+[node name="Root" parent="YSort/Computer/Actions/ComputerAction/Control/PokemonList/BigIcon2" index="1"]
+position = Vector2( 0, 0 )
+
+[node name="Body" parent="YSort/Computer/Actions/ComputerAction/Control/PokemonList/BigIcon2/Root" index="0"]
+position = Vector2( 240, 320 )
+scale = Vector2( 2.4, 2.4 )
+texture = ExtResource( 19 )
+
+[node name="BigIcon3" parent="YSort/Computer/Actions/ComputerAction/Control/PokemonList" instance=ExtResource( 5 )]
+scale = Vector2( 1, 1 )
+
+[node name="AnimationPlayer" parent="YSort/Computer/Actions/ComputerAction/Control/PokemonList/BigIcon3" index="0"]
+anims/bump = SubResource( 23 )
+anims/walk = SubResource( 24 )
+
+[node name="Root" parent="YSort/Computer/Actions/ComputerAction/Control/PokemonList/BigIcon3" index="1"]
+position = Vector2( 0, 0 )
+
+[node name="Body" parent="YSort/Computer/Actions/ComputerAction/Control/PokemonList/BigIcon3/Root" index="0"]
+position = Vector2( 360, 320 )
+scale = Vector2( 2.4, 2.4 )
+texture = ExtResource( 16 )
+
+[node name="BigIcon4" parent="YSort/Computer/Actions/ComputerAction/Control/PokemonList" instance=ExtResource( 5 )]
+scale = Vector2( 1, 1 )
+
+[node name="AnimationPlayer" parent="YSort/Computer/Actions/ComputerAction/Control/PokemonList/BigIcon4" index="0"]
+anims/bump = SubResource( 25 )
+anims/walk = SubResource( 26 )
+
+[node name="Root" parent="YSort/Computer/Actions/ComputerAction/Control/PokemonList/BigIcon4" index="1"]
+position = Vector2( 0, 0 )
+
+[node name="Body" parent="YSort/Computer/Actions/ComputerAction/Control/PokemonList/BigIcon4/Root" index="0"]
+position = Vector2( 480, 320 )
+scale = Vector2( 2.4, 2.4 )
+texture = ExtResource( 21 )
+
+[node name="BigIcon5" parent="YSort/Computer/Actions/ComputerAction/Control/PokemonList" instance=ExtResource( 5 )]
+scale = Vector2( 1, 1 )
+
+[node name="AnimationPlayer" parent="YSort/Computer/Actions/ComputerAction/Control/PokemonList/BigIcon5" index="0"]
+anims/bump = SubResource( 27 )
+anims/walk = SubResource( 28 )
+
+[node name="Root" parent="YSort/Computer/Actions/ComputerAction/Control/PokemonList/BigIcon5" index="1"]
+position = Vector2( 0, 0 )
+
+[node name="Body" parent="YSort/Computer/Actions/ComputerAction/Control/PokemonList/BigIcon5/Root" index="0"]
+position = Vector2( 600, 320 )
+scale = Vector2( 2.4, 2.4 )
+texture = ExtResource( 17 )
+
+[node name="BigIcon6" parent="YSort/Computer/Actions/ComputerAction/Control/PokemonList" instance=ExtResource( 5 )]
+scale = Vector2( 1, 1 )
+
+[node name="AnimationPlayer" parent="YSort/Computer/Actions/ComputerAction/Control/PokemonList/BigIcon6" index="0"]
+anims/bump = SubResource( 29 )
+anims/walk = SubResource( 30 )
+
+[node name="Root" parent="YSort/Computer/Actions/ComputerAction/Control/PokemonList/BigIcon6" index="1"]
+position = Vector2( 0, 0 )
+
+[node name="Body" parent="YSort/Computer/Actions/ComputerAction/Control/PokemonList/BigIcon6/Root" index="0"]
+position = Vector2( 720, 320 )
+scale = Vector2( 2.4, 2.4 )
+texture = ExtResource( 20 )
+
+[node name="BigIcon7" parent="YSort/Computer/Actions/ComputerAction/Control/PokemonList" instance=ExtResource( 5 )]
+scale = Vector2( 1, 1 )
+
+[node name="AnimationPlayer" parent="YSort/Computer/Actions/ComputerAction/Control/PokemonList/BigIcon7" index="0"]
+anims/bump = SubResource( 31 )
+anims/walk = SubResource( 32 )
+
+[node name="Root" parent="YSort/Computer/Actions/ComputerAction/Control/PokemonList/BigIcon7" index="1"]
+position = Vector2( 0, 0 )
+
+[node name="Body" parent="YSort/Computer/Actions/ComputerAction/Control/PokemonList/BigIcon7/Root" index="0"]
+position = Vector2( 840, 320 )
+scale = Vector2( 2.4, 2.4 )
+texture = null
+
+[node name="BigIcon8" parent="YSort/Computer/Actions/ComputerAction/Control/PokemonList" instance=ExtResource( 5 )]
+scale = Vector2( 1, 1 )
+
+[node name="AnimationPlayer" parent="YSort/Computer/Actions/ComputerAction/Control/PokemonList/BigIcon8" index="0"]
+anims/bump = SubResource( 33 )
+anims/walk = SubResource( 34 )
+
+[node name="Root" parent="YSort/Computer/Actions/ComputerAction/Control/PokemonList/BigIcon8" index="1"]
+position = Vector2( 0, 0 )
+
+[node name="Body" parent="YSort/Computer/Actions/ComputerAction/Control/PokemonList/BigIcon8/Root" index="0"]
+position = Vector2( 120, 480 )
+scale = Vector2( 2.4, 2.4 )
+texture = null
+
+[node name="BigIcon9" parent="YSort/Computer/Actions/ComputerAction/Control/PokemonList" instance=ExtResource( 5 )]
+scale = Vector2( 1, 1 )
+
+[node name="AnimationPlayer" parent="YSort/Computer/Actions/ComputerAction/Control/PokemonList/BigIcon9" index="0"]
+anims/bump = SubResource( 35 )
+anims/walk = SubResource( 36 )
+
+[node name="Body" parent="YSort/Computer/Actions/ComputerAction/Control/PokemonList/BigIcon9/Root" index="0"]
+position = Vector2( 240, 480 )
+scale = Vector2( 2.4, 2.4 )
+texture = null
+
+[node name="BigIcon10" parent="YSort/Computer/Actions/ComputerAction/Control/PokemonList" instance=ExtResource( 5 )]
+scale = Vector2( 1, 1 )
+
+[node name="AnimationPlayer" parent="YSort/Computer/Actions/ComputerAction/Control/PokemonList/BigIcon10" index="0"]
+anims/bump = SubResource( 37 )
+anims/walk = SubResource( 38 )
+
+[node name="Root" parent="YSort/Computer/Actions/ComputerAction/Control/PokemonList/BigIcon10" index="1"]
+position = Vector2( 0, 0 )
+
+[node name="Body" parent="YSort/Computer/Actions/ComputerAction/Control/PokemonList/BigIcon10/Root" index="0"]
+position = Vector2( 360, 480 )
+scale = Vector2( 2.4, 2.4 )
+texture = null
+
+[node name="BigIcon11" parent="YSort/Computer/Actions/ComputerAction/Control/PokemonList" instance=ExtResource( 5 )]
+scale = Vector2( 1, 1 )
+
+[node name="AnimationPlayer" parent="YSort/Computer/Actions/ComputerAction/Control/PokemonList/BigIcon11" index="0"]
+anims/bump = SubResource( 39 )
+anims/walk = SubResource( 40 )
+
+[node name="Root" parent="YSort/Computer/Actions/ComputerAction/Control/PokemonList/BigIcon11" index="1"]
+position = Vector2( 0, 0 )
+
+[node name="Body" parent="YSort/Computer/Actions/ComputerAction/Control/PokemonList/BigIcon11/Root" index="0"]
+position = Vector2( 480, 480 )
+scale = Vector2( 2.4, 2.4 )
+texture = null
+
+[node name="BigIcon12" parent="YSort/Computer/Actions/ComputerAction/Control/PokemonList" instance=ExtResource( 5 )]
+scale = Vector2( 1, 1 )
+
+[node name="AnimationPlayer" parent="YSort/Computer/Actions/ComputerAction/Control/PokemonList/BigIcon12" index="0"]
+anims/bump = SubResource( 41 )
+anims/walk = SubResource( 42 )
+
+[node name="Root" parent="YSort/Computer/Actions/ComputerAction/Control/PokemonList/BigIcon12" index="1"]
+position = Vector2( 0, 0 )
+
+[node name="Body" parent="YSort/Computer/Actions/ComputerAction/Control/PokemonList/BigIcon12/Root" index="0"]
+position = Vector2( 600, 480 )
+scale = Vector2( 2.4, 2.4 )
+texture = null
+
+[node name="BigIcon13" parent="YSort/Computer/Actions/ComputerAction/Control/PokemonList" instance=ExtResource( 5 )]
+scale = Vector2( 1, 1 )
+
+[node name="AnimationPlayer" parent="YSort/Computer/Actions/ComputerAction/Control/PokemonList/BigIcon13" index="0"]
+anims/bump = SubResource( 43 )
+anims/walk = SubResource( 44 )
+
+[node name="Root" parent="YSort/Computer/Actions/ComputerAction/Control/PokemonList/BigIcon13" index="1"]
+position = Vector2( 0, 0 )
+
+[node name="Body" parent="YSort/Computer/Actions/ComputerAction/Control/PokemonList/BigIcon13/Root" index="0"]
+position = Vector2( 720, 480 )
+scale = Vector2( 2.4, 2.4 )
+texture = null
+
+[node name="BigIcon14" parent="YSort/Computer/Actions/ComputerAction/Control/PokemonList" instance=ExtResource( 5 )]
+scale = Vector2( 1, 1 )
+
+[node name="AnimationPlayer" parent="YSort/Computer/Actions/ComputerAction/Control/PokemonList/BigIcon14" index="0"]
+anims/bump = SubResource( 45 )
+anims/walk = SubResource( 46 )
+
+[node name="Root" parent="YSort/Computer/Actions/ComputerAction/Control/PokemonList/BigIcon14" index="1"]
+position = Vector2( 0, 0 )
+
+[node name="Body" parent="YSort/Computer/Actions/ComputerAction/Control/PokemonList/BigIcon14/Root" index="0"]
+position = Vector2( 840, 480 )
+scale = Vector2( 2.4, 2.4 )
+texture = null
+
+[node name="BigIcon15" parent="YSort/Computer/Actions/ComputerAction/Control/PokemonList" instance=ExtResource( 5 )]
+scale = Vector2( 1, 1 )
+
+[node name="AnimationPlayer" parent="YSort/Computer/Actions/ComputerAction/Control/PokemonList/BigIcon15" index="0"]
+anims/bump = SubResource( 47 )
+anims/walk = SubResource( 48 )
+
+[node name="Root" parent="YSort/Computer/Actions/ComputerAction/Control/PokemonList/BigIcon15" index="1"]
+position = Vector2( 0, 0 )
+
+[node name="Body" parent="YSort/Computer/Actions/ComputerAction/Control/PokemonList/BigIcon15/Root" index="0"]
+position = Vector2( 120, 640 )
+scale = Vector2( 2.4, 2.4 )
+texture = null
+
+[node name="BigIcon16" parent="YSort/Computer/Actions/ComputerAction/Control/PokemonList" instance=ExtResource( 5 )]
+scale = Vector2( 1, 1 )
+
+[node name="AnimationPlayer" parent="YSort/Computer/Actions/ComputerAction/Control/PokemonList/BigIcon16" index="0"]
+anims/bump = SubResource( 49 )
+anims/walk = SubResource( 50 )
+
+[node name="Root" parent="YSort/Computer/Actions/ComputerAction/Control/PokemonList/BigIcon16" index="1"]
+position = Vector2( 0, 0 )
+
+[node name="Body" parent="YSort/Computer/Actions/ComputerAction/Control/PokemonList/BigIcon16/Root" index="0"]
+position = Vector2( 240, 640 )
+scale = Vector2( 2.4, 2.4 )
+texture = null
+
+[node name="BigIcon17" parent="YSort/Computer/Actions/ComputerAction/Control/PokemonList" instance=ExtResource( 5 )]
+scale = Vector2( 1, 1 )
+
+[node name="AnimationPlayer" parent="YSort/Computer/Actions/ComputerAction/Control/PokemonList/BigIcon17" index="0"]
+anims/bump = SubResource( 51 )
+anims/walk = SubResource( 52 )
+
+[node name="Root" parent="YSort/Computer/Actions/ComputerAction/Control/PokemonList/BigIcon17" index="1"]
+position = Vector2( 0, 0 )
+
+[node name="Body" parent="YSort/Computer/Actions/ComputerAction/Control/PokemonList/BigIcon17/Root" index="0"]
+position = Vector2( 360, 640 )
+scale = Vector2( 2.4, 2.4 )
+texture = null
+
+[node name="BigIcon18" parent="YSort/Computer/Actions/ComputerAction/Control/PokemonList" instance=ExtResource( 5 )]
+scale = Vector2( 1, 1 )
+
+[node name="AnimationPlayer" parent="YSort/Computer/Actions/ComputerAction/Control/PokemonList/BigIcon18" index="0"]
+anims/bump = SubResource( 53 )
+anims/walk = SubResource( 54 )
+
+[node name="Root" parent="YSort/Computer/Actions/ComputerAction/Control/PokemonList/BigIcon18" index="1"]
+position = Vector2( 0, 0 )
+
+[node name="Body" parent="YSort/Computer/Actions/ComputerAction/Control/PokemonList/BigIcon18/Root" index="0"]
+position = Vector2( 480, 640 )
+scale = Vector2( 2.4, 2.4 )
+texture = null
+
+[node name="BigIcon19" parent="YSort/Computer/Actions/ComputerAction/Control/PokemonList" instance=ExtResource( 5 )]
+scale = Vector2( 1, 1 )
+
+[node name="AnimationPlayer" parent="YSort/Computer/Actions/ComputerAction/Control/PokemonList/BigIcon19" index="0"]
+anims/bump = SubResource( 55 )
+anims/walk = SubResource( 56 )
+
+[node name="Root" parent="YSort/Computer/Actions/ComputerAction/Control/PokemonList/BigIcon19" index="1"]
+position = Vector2( 0, 0 )
+
+[node name="Body" parent="YSort/Computer/Actions/ComputerAction/Control/PokemonList/BigIcon19/Root" index="0"]
+position = Vector2( 600, 640 )
+scale = Vector2( 2.4, 2.4 )
+texture = null
+
+[node name="BigIcon20" parent="YSort/Computer/Actions/ComputerAction/Control/PokemonList" instance=ExtResource( 5 )]
+scale = Vector2( 1, 1 )
+
+[node name="AnimationPlayer" parent="YSort/Computer/Actions/ComputerAction/Control/PokemonList/BigIcon20" index="0"]
+anims/bump = SubResource( 57 )
+anims/walk = SubResource( 58 )
+
+[node name="Root" parent="YSort/Computer/Actions/ComputerAction/Control/PokemonList/BigIcon20" index="1"]
+position = Vector2( 0, 0 )
+
+[node name="Body" parent="YSort/Computer/Actions/ComputerAction/Control/PokemonList/BigIcon20/Root" index="0"]
+position = Vector2( 720, 640 )
+scale = Vector2( 2.4, 2.4 )
+texture = null
+
+[node name="BigIcon21" parent="YSort/Computer/Actions/ComputerAction/Control/PokemonList" instance=ExtResource( 5 )]
+scale = Vector2( 1, 1 )
+
+[node name="AnimationPlayer" parent="YSort/Computer/Actions/ComputerAction/Control/PokemonList/BigIcon21" index="0"]
+anims/bump = SubResource( 59 )
+anims/walk = SubResource( 60 )
+
+[node name="Root" parent="YSort/Computer/Actions/ComputerAction/Control/PokemonList/BigIcon21" index="1"]
+position = Vector2( 0, 0 )
+
+[node name="Body" parent="YSort/Computer/Actions/ComputerAction/Control/PokemonList/BigIcon21/Root" index="0"]
+position = Vector2( 840, 640 )
+scale = Vector2( 2.4, 2.4 )
+texture = null
+
+[node name="BigIcon22" parent="YSort/Computer/Actions/ComputerAction/Control/PokemonList" instance=ExtResource( 5 )]
+scale = Vector2( 1, 1 )
+
+[node name="AnimationPlayer" parent="YSort/Computer/Actions/ComputerAction/Control/PokemonList/BigIcon22" index="0"]
+anims/bump = SubResource( 61 )
+anims/walk = SubResource( 62 )
+
+[node name="Root" parent="YSort/Computer/Actions/ComputerAction/Control/PokemonList/BigIcon22" index="1"]
+position = Vector2( 0, 0 )
+
+[node name="Body" parent="YSort/Computer/Actions/ComputerAction/Control/PokemonList/BigIcon22/Root" index="0"]
+position = Vector2( 120, 800 )
+scale = Vector2( 2.4, 2.4 )
+texture = null
+
+[node name="BigIcon23" parent="YSort/Computer/Actions/ComputerAction/Control/PokemonList" instance=ExtResource( 5 )]
+scale = Vector2( 1, 1 )
+
+[node name="AnimationPlayer" parent="YSort/Computer/Actions/ComputerAction/Control/PokemonList/BigIcon23" index="0"]
+anims/bump = SubResource( 63 )
+anims/walk = SubResource( 64 )
+
+[node name="Root" parent="YSort/Computer/Actions/ComputerAction/Control/PokemonList/BigIcon23" index="1"]
+position = Vector2( 0, 0 )
+
+[node name="Body" parent="YSort/Computer/Actions/ComputerAction/Control/PokemonList/BigIcon23/Root" index="0"]
+position = Vector2( 240, 800 )
+scale = Vector2( 2.4, 2.4 )
+texture = null
+
+[node name="BigIcon24" parent="YSort/Computer/Actions/ComputerAction/Control/PokemonList" instance=ExtResource( 5 )]
+scale = Vector2( 1, 1 )
+
+[node name="AnimationPlayer" parent="YSort/Computer/Actions/ComputerAction/Control/PokemonList/BigIcon24" index="0"]
+anims/bump = SubResource( 65 )
+anims/walk = SubResource( 66 )
+
+[node name="Root" parent="YSort/Computer/Actions/ComputerAction/Control/PokemonList/BigIcon24" index="1"]
+position = Vector2( 0, 0 )
+
+[node name="Body" parent="YSort/Computer/Actions/ComputerAction/Control/PokemonList/BigIcon24/Root" index="0"]
+position = Vector2( 360, 800 )
+scale = Vector2( 2.4, 2.4 )
+texture = null
+
+[node name="BigIcon25" parent="YSort/Computer/Actions/ComputerAction/Control/PokemonList" instance=ExtResource( 5 )]
+scale = Vector2( 1, 1 )
+
+[node name="AnimationPlayer" parent="YSort/Computer/Actions/ComputerAction/Control/PokemonList/BigIcon25" index="0"]
+anims/bump = SubResource( 67 )
+anims/walk = SubResource( 68 )
+
+[node name="Root" parent="YSort/Computer/Actions/ComputerAction/Control/PokemonList/BigIcon25" index="1"]
+position = Vector2( 0, 0 )
+
+[node name="Body" parent="YSort/Computer/Actions/ComputerAction/Control/PokemonList/BigIcon25/Root" index="0"]
+position = Vector2( 480, 800 )
+scale = Vector2( 2.4, 2.4 )
+texture = null
+
+[node name="BigIcon26" parent="YSort/Computer/Actions/ComputerAction/Control/PokemonList" instance=ExtResource( 5 )]
+scale = Vector2( 1, 1 )
+
+[node name="AnimationPlayer" parent="YSort/Computer/Actions/ComputerAction/Control/PokemonList/BigIcon26" index="0"]
+anims/bump = SubResource( 69 )
+anims/walk = SubResource( 70 )
+
+[node name="Root" parent="YSort/Computer/Actions/ComputerAction/Control/PokemonList/BigIcon26" index="1"]
+position = Vector2( 0, 0 )
+
+[node name="Body" parent="YSort/Computer/Actions/ComputerAction/Control/PokemonList/BigIcon26/Root" index="0"]
+position = Vector2( 600, 800 )
+scale = Vector2( 2.4, 2.4 )
+texture = null
+
+[node name="BigIcon27" parent="YSort/Computer/Actions/ComputerAction/Control/PokemonList" instance=ExtResource( 5 )]
+scale = Vector2( 1, 1 )
+
+[node name="AnimationPlayer" parent="YSort/Computer/Actions/ComputerAction/Control/PokemonList/BigIcon27" index="0"]
+anims/bump = SubResource( 71 )
+anims/walk = SubResource( 72 )
+
+[node name="Root" parent="YSort/Computer/Actions/ComputerAction/Control/PokemonList/BigIcon27" index="1"]
+position = Vector2( 0, 0 )
+
+[node name="Body" parent="YSort/Computer/Actions/ComputerAction/Control/PokemonList/BigIcon27/Root" index="0"]
+position = Vector2( 720, 800 )
+scale = Vector2( 2.4, 2.4 )
+texture = null
+
+[node name="BigIcon28" parent="YSort/Computer/Actions/ComputerAction/Control/PokemonList" instance=ExtResource( 5 )]
+scale = Vector2( 1, 1 )
+
+[node name="AnimationPlayer" parent="YSort/Computer/Actions/ComputerAction/Control/PokemonList/BigIcon28" index="0"]
+anims/bump = SubResource( 73 )
+anims/walk = SubResource( 74 )
+
+[node name="Root" parent="YSort/Computer/Actions/ComputerAction/Control/PokemonList/BigIcon28" index="1"]
+position = Vector2( 0, 0 )
+
+[node name="Body" parent="YSort/Computer/Actions/ComputerAction/Control/PokemonList/BigIcon28/Root" index="0"]
+position = Vector2( 840, 800 )
+scale = Vector2( 2.4, 2.4 )
+texture = null
+
+[node name="SelectArrow" parent="YSort/Computer/Actions/ComputerAction" instance=ExtResource( 13 )]
+visible = false
+margin_left = 30.0
+margin_top = 190.0
+margin_right = 80.0
+margin_bottom = 240.0
+
+[node name="Sprite" parent="YSort/Computer/Actions/ComputerAction/SelectArrow" index="0"]
+position = Vector2( 0, 0 )
+scale = Vector2( 3, 3 )
+texture = ExtResource( 11 )
+
+[node name="AnimationPlayer" parent="YSort/Computer/Actions/ComputerAction/SelectArrow/Sprite" index="0"]
+anims/SETUP = SubResource( 16 )
+anims/wiggle = SubResource( 17 )
+
+[node name="ExchangePokemon" parent="YSort/Computer/Actions/ComputerAction" instance=ExtResource( 22 )]
+visible = false
+margin_left = 600.0
+margin_right = 600.0
+rect_scale = Vector2( 0.55, 0.55 )
+
+[node name="Tween" type="Tween" parent="YSort/Computer"]
+
+[node name="Door" parent="." instance=ExtResource( 3 )]
+modulate = Color( 0.12549, 0.313726, 0.85098, 1 )
+position = Vector2( 108, 144 )
+scale = Vector2( 1.5, 1 )
+next_scene_path = "res://src/map/town/Town.tscn"
+is_invisible = true
+spawn_location = Vector2( -105, 221 )
+spawn_direction = Vector2( 0, 1 )
+
+[connection signal="cancel" from="YSort/Computer/Actions/ComputerAction/ExchangePokemon" to="YSort/Computer/Actions/ComputerAction" method="_on_ExchangePokemon_cancel"]
+[connection signal="switch_pokemon" from="YSort/Computer/Actions/ComputerAction/ExchangePokemon" to="YSort/Computer/Actions/ComputerAction" method="_on_ExchangePokemon_switch_pokemon"]
+
+[editable path="YSort/Player"]
+[editable path="YSort/Nurse/Pivot/PawnAnim"]
+[editable path="YSort/Nurse/Actions/HealAction/SelectArrow"]
+[editable path="YSort/Computer/Pivot/PawnAnim"]
+[editable path="YSort/Computer/Actions/ComputerAction/Control/PokemonList/BigIcon"]
+[editable path="YSort/Computer/Actions/ComputerAction/Control/PokemonList/BigIcon2"]
+[editable path="YSort/Computer/Actions/ComputerAction/Control/PokemonList/BigIcon3"]
+[editable path="YSort/Computer/Actions/ComputerAction/Control/PokemonList/BigIcon4"]
+[editable path="YSort/Computer/Actions/ComputerAction/Control/PokemonList/BigIcon5"]
+[editable path="YSort/Computer/Actions/ComputerAction/Control/PokemonList/BigIcon6"]
+[editable path="YSort/Computer/Actions/ComputerAction/Control/PokemonList/BigIcon7"]
+[editable path="YSort/Computer/Actions/ComputerAction/Control/PokemonList/BigIcon8"]
+[editable path="YSort/Computer/Actions/ComputerAction/Control/PokemonList/BigIcon9"]
+[editable path="YSort/Computer/Actions/ComputerAction/Control/PokemonList/BigIcon10"]
+[editable path="YSort/Computer/Actions/ComputerAction/Control/PokemonList/BigIcon11"]
+[editable path="YSort/Computer/Actions/ComputerAction/Control/PokemonList/BigIcon12"]
+[editable path="YSort/Computer/Actions/ComputerAction/Control/PokemonList/BigIcon13"]
+[editable path="YSort/Computer/Actions/ComputerAction/Control/PokemonList/BigIcon14"]
+[editable path="YSort/Computer/Actions/ComputerAction/Control/PokemonList/BigIcon15"]
+[editable path="YSort/Computer/Actions/ComputerAction/Control/PokemonList/BigIcon16"]
+[editable path="YSort/Computer/Actions/ComputerAction/Control/PokemonList/BigIcon17"]
+[editable path="YSort/Computer/Actions/ComputerAction/Control/PokemonList/BigIcon18"]
+[editable path="YSort/Computer/Actions/ComputerAction/Control/PokemonList/BigIcon19"]
+[editable path="YSort/Computer/Actions/ComputerAction/Control/PokemonList/BigIcon20"]
+[editable path="YSort/Computer/Actions/ComputerAction/Control/PokemonList/BigIcon21"]
+[editable path="YSort/Computer/Actions/ComputerAction/Control/PokemonList/BigIcon22"]
+[editable path="YSort/Computer/Actions/ComputerAction/Control/PokemonList/BigIcon23"]
+[editable path="YSort/Computer/Actions/ComputerAction/Control/PokemonList/BigIcon24"]
+[editable path="YSort/Computer/Actions/ComputerAction/Control/PokemonList/BigIcon25"]
+[editable path="YSort/Computer/Actions/ComputerAction/Control/PokemonList/BigIcon26"]
+[editable path="YSort/Computer/Actions/ComputerAction/Control/PokemonList/BigIcon27"]
+[editable path="YSort/Computer/Actions/ComputerAction/Control/PokemonList/BigIcon28"]
+[editable path="YSort/Computer/Actions/ComputerAction/SelectArrow"]
+[editable path="Door"]

@@ -1,0 +1,167 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://src/combat/battlers/skills/normalSkill/Tackle/Tackle.gd" type="Script" id=1]
+[ext_resource path="res://assets/battle/skill/Normal/attack.png" type="Texture" id=2]
+[ext_resource path="res://assets/battle/skill/Normal/blood_n.png" type="Texture" id=3]
+
+[sub_resource type="Animation" id=1]
+resource_name = "attack"
+length = 0.5
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath("attacks/attack2:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.45 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 117, 108 ), Vector2( 270, 50 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("attacks/attack:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.45 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 117.337, 108.192 ), Vector2( 270, 50 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("attacks/attack3:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.45 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 117.337, 108.192 ), Vector2( 270, 50 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("attacks/attack2:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("attacks/attack3:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("attacks:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0, 0.45 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "attack_effect"
+tracks/0/type = "value"
+tracks/0/path = NodePath("blood/Sprite2:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 0.7 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("blood/Sprite2:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4, 5, 6, 7 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("blood:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+
+[node name="tackle" type="Position2D"]
+script = ExtResource( 1 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/attack = SubResource( 1 )
+anims/attack_effect = SubResource( 2 )
+
+[node name="attacks" type="Node2D" parent="."]
+position = Vector2( 2044.53, 798.174 )
+rotation = 3.14159
+scale = Vector2( 5, 5 )
+
+[node name="attack" type="Sprite" parent="attacks"]
+position = Vector2( 117.337, 108.192 )
+texture = ExtResource( 2 )
+flip_h = true
+hframes = 3
+
+[node name="attack2" type="Sprite" parent="attacks"]
+modulate = Color( 1, 1, 1, 0 )
+position = Vector2( 117, 108 )
+texture = ExtResource( 2 )
+flip_h = true
+hframes = 3
+frame = 1
+
+[node name="attack3" type="Sprite" parent="attacks"]
+modulate = Color( 1, 1, 1, 0 )
+position = Vector2( 117.337, 108.192 )
+texture = ExtResource( 2 )
+flip_h = true
+hframes = 3
+frame = 2
+
+[node name="blood" type="Node2D" parent="."]
+visible = false
+position = Vector2( -1206.37, 389.366 )
+scale = Vector2( 7, 7 )
+
+[node name="Sprite2" type="Sprite" parent="blood"]
+modulate = Color( 1, 1, 1, 0 )
+position = Vector2( 257.8, 32.4 )
+texture = ExtResource( 3 )
+hframes = 8
+frame = 7

@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Liyue.mp3-fa4eede8723c21b96d41d8a5f06eb2ea.mp3str"
+
+[deps]
+
+source_file="res://assets/audio/bgm/Liyue.mp3"
+dest_files=[ "res://.import/Liyue.mp3-fa4eede8723c21b96d41d8a5f06eb2ea.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

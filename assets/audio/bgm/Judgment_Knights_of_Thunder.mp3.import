@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Judgment_Knights_of_Thunder.mp3-d0800b361072b5c8ff22d60ce8f266af.mp3str"
+
+[deps]
+
+source_file="res://assets/audio/bgm/Judgment_Knights_of_Thunder.mp3"
+dest_files=[ "res://.import/Judgment_Knights_of_Thunder.mp3-d0800b361072b5c8ff22d60ce8f266af.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

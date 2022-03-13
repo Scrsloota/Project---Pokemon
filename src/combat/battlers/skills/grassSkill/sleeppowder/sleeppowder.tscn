@@ -1,0 +1,466 @@
+[gd_scene load_steps=17 format=2]
+
+[ext_resource path="res://assets/battle/skill/sleepPowder/sleep_powder.png" type="Texture" id=1]
+[ext_resource path="res://src/combat/battlers/skills/grassSkill/sleeppowder/sleeppowder.gd" type="Script" id=2]
+[ext_resource path="res://assets/battle/skill/sleepPowder/sleep_4.png" type="Texture" id=3]
+[ext_resource path="res://assets/battle/skill/sleepPowder/attack.png" type="Texture" id=4]
+[ext_resource path="res://assets/battle/skill/sleepPowder/sleep_2.png" type="Texture" id=5]
+[ext_resource path="res://assets/battle/skill/sleepPowder/sleep1.png" type="Texture" id=6]
+[ext_resource path="res://assets/battle/skill/sleepPowder/sleep_3.png" type="Texture" id=7]
+[ext_resource path="res://assets/battle/skill/sleepPowder/sleep_5.png" type="Texture" id=8]
+
+[sub_resource type="Animation" id=1]
+resource_name = "absorb_powder"
+step = 0.2
+tracks/0/type = "value"
+tracks/0/path = NodePath("absorb_powder/Sprite2:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( -100, 0 ), Vector2( -100, 0 ), Vector2( 0, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("absorb_powder/Sprite3:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.2, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 100 ), Vector2( 0, 100 ), Vector2( 0, 0 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("absorb_powder/Sprite5:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.2, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 70.711, 70.711 ), Vector2( 70.711, 70.711 ), Vector2( 0, 0 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("absorb_powder/Sprite:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.2, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 100, 0 ), Vector2( 100, 0 ), Vector2( 0, 0 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("absorb_powder/Sprite7:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 0.2, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( -70.711, 70.711 ), Vector2( -70.711, 70.711 ), Vector2( 0, 0 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("absorb_powder/Sprite4:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0, 0.2, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, -100 ), Vector2( 0, -100 ), Vector2( 0, 0 ) ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("absorb_powder/Sprite8:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0, 0.2, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( -70.711, -70.711 ), Vector2( -70.711, -70.711 ), Vector2( 0, 0 ) ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("absorb_powder/Sprite6:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0, 0.2, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 70.711, -70.711 ), Vector2( 70.711, -70.711 ), Vector2( 0, 0 ) ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("absorb_powder/Sprite:frame")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3 ]
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("absorb_powder/Sprite2:frame")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3 ]
+}
+tracks/10/type = "value"
+tracks/10/path = NodePath("absorb_powder/Sprite3:frame")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3 ]
+}
+tracks/11/type = "value"
+tracks/11/path = NodePath("absorb_powder/Sprite4:frame")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3 ]
+}
+tracks/12/type = "value"
+tracks/12/path = NodePath("absorb_powder/Sprite5:frame")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3 ]
+}
+tracks/13/type = "value"
+tracks/13/path = NodePath("absorb_powder/Sprite6:frame")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3 ]
+}
+tracks/14/type = "value"
+tracks/14/path = NodePath("absorb_powder/Sprite7:frame")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3 ]
+}
+tracks/15/type = "value"
+tracks/15/path = NodePath("absorb_powder/Sprite8:frame")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3 ]
+}
+tracks/16/type = "value"
+tracks/16/path = NodePath("absorb_powder:modulate")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/keys = {
+"times": PoolRealArray( 0, 0.8, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/17/type = "value"
+tracks/17/path = NodePath("absorb_powder:visible")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+
+[sub_resource type="Animation" id=2]
+tracks/0/type = "value"
+tracks/0/path = NodePath("attack_sprite:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 860, -380 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("attack_sprite:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+
+[sub_resource type="Animation" id=3]
+length = 1.2
+tracks/0/type = "value"
+tracks/0/path = NodePath("sleep_state/Sprite:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("sleep_state/Sprite2:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("sleep_state/Sprite3:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.6 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("sleep_state/Sprite4:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.8 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("sleep_state/Sprite5:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("sleep_state:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0, 1.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+
+[sub_resource type="Gradient" id=4]
+offsets = PoolRealArray( 0.335227, 0.6875, 0.897727, 0.971591, 1 )
+colors = PoolColorArray( 0.482353, 0.623529, 0.529412, 1, 0.253357, 0.522995, 0.241771, 1, 0.140077, 0.420232, 0.109329, 1, 0.160784, 0.482353, 0.12549, 1, 0.396078, 0.686275, 0.47451, 1 )
+
+[sub_resource type="GradientTexture" id=5]
+gradient = SubResource( 4 )
+
+[sub_resource type="Curve" id=6]
+_data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 0.98995, 0 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=7]
+curve = SubResource( 6 )
+
+[sub_resource type="ParticlesMaterial" id=8]
+emission_shape = 2
+emission_box_extents = Vector3( 5, 18, 1 )
+flag_disable_z = true
+spread = 0.0
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 25.0
+angular_velocity = 350.0
+angular_velocity_random = 1.0
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+linear_accel = 25.0
+radial_accel = -10.0
+angle = 45.0
+scale = 2.0
+scale_curve = SubResource( 7 )
+color_ramp = SubResource( 5 )
+
+[node name="sleeppowder" type="Position2D"]
+script = ExtResource( 2 )
+
+[node name="sleep_state" type="Node2D" parent="."]
+visible = false
+position = Vector2( 1321.49, 141.493 )
+
+[node name="Sprite" type="Sprite" parent="sleep_state"]
+position = Vector2( -130.814, -10.6787 )
+scale = Vector2( 3, 3 )
+texture = ExtResource( 6 )
+
+[node name="Sprite2" type="Sprite" parent="sleep_state"]
+position = Vector2( -70.5387, 14.5952 )
+scale = Vector2( 3, 3 )
+texture = ExtResource( 5 )
+
+[node name="Sprite3" type="Sprite" parent="sleep_state"]
+position = Vector2( -97.9338, -4.3147 )
+scale = Vector2( 3, 3 )
+texture = ExtResource( 7 )
+
+[node name="Sprite4" type="Sprite" parent="sleep_state"]
+position = Vector2( -132.936, -21.2853 )
+scale = Vector2( 3, 3 )
+texture = ExtResource( 3 )
+
+[node name="Sprite5" type="Sprite" parent="sleep_state"]
+position = Vector2( -171.119, -49.9231 )
+scale = Vector2( 3, 3 )
+texture = ExtResource( 8 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/absorb_powder = SubResource( 1 )
+anims/attack = SubResource( 2 )
+anims/sleep_state = SubResource( 3 )
+
+[node name="attack_sprite" type="Node2D" parent="."]
+
+[node name="Particles2D2" type="Particles2D" parent="attack_sprite"]
+position = Vector2( 545.924, 580.187 )
+rotation = 2.61799
+scale = Vector2( 1.5, 1.5 )
+amount = 500
+lifetime = 2.0
+process_material = SubResource( 8 )
+
+[node name="Sprite" type="Sprite" parent="attack_sprite"]
+position = Vector2( 549.511, 577.826 )
+scale = Vector2( 3, 3 )
+texture = ExtResource( 4 )
+
+[node name="absorb_powder" type="Node2D" parent="."]
+position = Vector2( 1406.69, 202.683 )
+scale = Vector2( 1.5, 1.5 )
+
+[node name="Sprite" type="Sprite" parent="absorb_powder"]
+position = Vector2( 100, 0 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 1 )
+hframes = 4
+
+[node name="Sprite2" type="Sprite" parent="absorb_powder"]
+position = Vector2( -100, 0 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 1 )
+hframes = 4
+
+[node name="Sprite3" type="Sprite" parent="absorb_powder"]
+position = Vector2( 0, 100 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 1 )
+hframes = 4
+
+[node name="Sprite4" type="Sprite" parent="absorb_powder"]
+position = Vector2( 0, -100 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 1 )
+hframes = 4
+
+[node name="Sprite5" type="Sprite" parent="absorb_powder"]
+position = Vector2( 70.711, 70.711 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 1 )
+hframes = 4
+
+[node name="Sprite6" type="Sprite" parent="absorb_powder"]
+position = Vector2( 70.711, -70.711 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 1 )
+hframes = 4
+
+[node name="Sprite7" type="Sprite" parent="absorb_powder"]
+position = Vector2( -70.711, 70.711 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 1 )
+hframes = 4
+
+[node name="Sprite8" type="Sprite" parent="absorb_powder"]
+position = Vector2( -70.711, -70.711 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 1 )
+hframes = 4

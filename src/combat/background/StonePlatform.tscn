@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=2]
+
+[sub_resource type="StreamTexture" id=1]
+flags = 4
+load_path = "res://.import/stone_platform.png-3806e66d24ee44faf946ae6f9f2df1ad.stex"
+
+[node name="StonePlatform" type="Position2D"]
+
+[node name="sprite" type="Sprite" parent="."]
+visible = false
+position = Vector2( 0, 43 )
+texture = SubResource( 1 )

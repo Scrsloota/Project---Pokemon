@@ -1,0 +1,23 @@
+[gd_resource type="Resource" load_steps=13 format=2]
+
+[ext_resource path="res://src/combat/battlers/stats/growthStats/GrowthStats.gd" type="Script" id=1]
+[ext_resource path="res://src/combat/battlers/stats/level/VeryFast.tres" type="Resource" id=2]
+[ext_resource path="res://assets/pokemon/Pikachu.png" type="Texture" id=3]
+[ext_resource path="res://src/combat/battlers/skills/electrSkill/ThunderBolt.tres" type="Resource" id=4]
+[ext_resource path="res://src/combat/battlers/skills/normalSkill/QuickAttack.tres" type="Resource" id=5]
+[ext_resource path="res://src/combat/battlers/skills/electrSkill/Thunder.tres" type="Resource" id=6]
+[ext_resource path="res://src/combat/battlers/skills/normalSkill/TailWhip.tres" type="Resource" id=7]
+[ext_resource path="res://src/combat/battlers/skills/electrSkill/ThunderWave.tres" type="Resource" id=8]
+[ext_resource path="res://src/combat/battlers/skills/psychicSkill/Agility.tres" type="Resource" id=9]
+[ext_resource path="res://src/combat/battlers/skills/normalSkill/Growl.tres" type="Resource" id=10]
+[ext_resource path="res://src/combat/battlers/skills/normalSkill/DoubleTeam.tres" type="Resource" id=11]
+[ext_resource path="res://src/combat/battlers/skills/electrSkill/ThunderShock.tres" type="Resource" id=12]
+
+[resource]
+script = ExtResource( 1 )
+level_array = ExtResource( 2 )
+species_strength = [ 35, 55, 40, 50, 50, 90 ]
+primary_type = 12
+secondary_type = 18
+icon = ExtResource( 3 )
+can_learn_skills = [ ExtResource( 10 ), ExtResource( 7 ), ExtResource( 5 ), ExtResource( 11 ), ExtResource( 6 ), ExtResource( 4 ), ExtResource( 12 ), ExtResource( 8 ), ExtResource( 9 ) ]

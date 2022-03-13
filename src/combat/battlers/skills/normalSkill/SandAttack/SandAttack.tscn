@@ -1,0 +1,431 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://src/combat/battlers/skills/normalSkill/SandAttack/SandAttack.gd" type="Script" id=1]
+[ext_resource path="res://assets/battle/skill/Normal/sand.png" type="Texture" id=2]
+
+[sub_resource type="Animation" id=1]
+resource_name = "sand"
+length = 0.6
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath("sand/sand1:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("sand/sand2:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.05, 0.15, 0.25, 0.35 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 1, 2, 0, 3 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("sand/sand3:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0.05, 0.15, 0.25, 0.35 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 2, 1, 0, 3 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("sand/sand4:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.1, 0.3, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 2, 3, 0, 1 ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("sand/sand5:frame")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 2, 1, 0, 3 ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("sand/sand6:frame")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0.05, 0.15, 0.35, 0.45 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 2, 3, 0, 1 ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("sand/sand7:frame")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 2, 3, 0, 1 ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("sand/sand8:frame")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0.05, 0.15, 0.25, 0.35 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 1, 0, 3, 2 ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("sand/sand1:modulate")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("sand/sand2:modulate")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0.05, 0.25, 0.45 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/10/type = "value"
+tracks/10/path = NodePath("sand/sand3:modulate")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"times": PoolRealArray( 0.05, 0.25, 0.45 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/11/type = "value"
+tracks/11/path = NodePath("sand/sand4:modulate")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/keys = {
+"times": PoolRealArray( 0, 0.3, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/12/type = "value"
+tracks/12/path = NodePath("sand/sand5:modulate")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/13/type = "value"
+tracks/13/path = NodePath("sand/sand6:modulate")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/keys = {
+"times": PoolRealArray( 0.05, 0.35, 0.55 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/14/type = "value"
+tracks/14/path = NodePath("sand/sand7:modulate")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/15/type = "value"
+tracks/15/path = NodePath("sand/sand8:modulate")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/keys = {
+"times": PoolRealArray( 0.05, 0.25, 0.45 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/16/type = "value"
+tracks/16/path = NodePath("sand:visible")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/keys = {
+"times": PoolRealArray( 0, 0.6 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "thrown"
+length = 0.6
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath("throwns/thrown:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -60, 136 ), Vector2( 740, -372 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("throwns/thrown:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.55 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("throwns/thrown/Sprite:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.15, 0.3, 0.45 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 2, 3, 1, 0 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("throwns/thrown/Sprite2:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.15, 0.3, 0.45 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 4, 1, 2, 3 ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("throwns/thrown/Sprite3:frame")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 0.15, 0.3, 0.45 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 1, 3, 2, 0 ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("throwns/thrown/Sprite4:frame")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0, 0.15, 0.3, 0.45 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 4, 2, 0, 3 ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("throwns/thrown/Sprite5:frame")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0, 0.15, 0.3, 0.45 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 2, 3, 1 ]
+}
+
+[node name="sandAttack" type="Position2D"]
+script = ExtResource( 1 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/sand = SubResource( 1 )
+anims/thrown = SubResource( 2 )
+
+[node name="sand" type="Node2D" parent="."]
+visible = false
+modulate = Color( 1, 1, 1, 0.890196 )
+position = Vector2( 331.528, -306.057 )
+scale = Vector2( 5, 5 )
+
+[node name="sand1" type="Sprite" parent="sand"]
+modulate = Color( 1, 1, 1, 0 )
+position = Vector2( 191.543, 102.008 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 2 )
+hframes = 5
+frame = 3
+
+[node name="sand2" type="Sprite" parent="sand"]
+modulate = Color( 1, 1, 1, 0 )
+position = Vector2( 224.952, 89.0899 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 2 )
+hframes = 5
+frame = 3
+
+[node name="sand3" type="Sprite" parent="sand"]
+modulate = Color( 1, 1, 1, 0 )
+position = Vector2( 204.907, 87.3081 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 2 )
+hframes = 5
+frame = 3
+
+[node name="sand4" type="Sprite" parent="sand"]
+modulate = Color( 1, 1, 1, 0 )
+position = Vector2( 214.261, 109.629 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 2 )
+hframes = 5
+frame = 1
+
+[node name="sand5" type="Sprite" parent="sand"]
+modulate = Color( 1, 1, 1, 0 )
+position = Vector2( 205.352, 119.38 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 2 )
+hframes = 5
+frame = 3
+
+[node name="sand6" type="Sprite" parent="sand"]
+modulate = Color( 1, 1, 1, 0 )
+position = Vector2( 205.749, 103.561 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 2 )
+hframes = 5
+frame = 1
+
+[node name="sand7" type="Sprite" parent="sand"]
+modulate = Color( 1, 1, 1, 0 )
+position = Vector2( 228.516, 98.4443 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 2 )
+hframes = 5
+frame = 1
+
+[node name="sand8" type="Sprite" parent="sand"]
+modulate = Color( 1, 1, 1, 0 )
+position = Vector2( 228.215, 114.601 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 2 )
+hframes = 5
+frame = 2
+
+[node name="throwns" type="Node2D" parent="."]
+modulate = Color( 1, 1, 1, 0.811765 )
+
+[node name="thrown" type="Node2D" parent="throwns"]
+position = Vector2( 260, -67.2 )
+scale = Vector2( 5, 5 )
+
+[node name="Sprite" type="Sprite" parent="throwns/thrown"]
+position = Vector2( 130.891, 107.614 )
+rotation = -0.261799
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 2 )
+hframes = 5
+frame = 3
+region_rect = Rect2( 0, 18, 244, 107 )
+
+[node name="Sprite2" type="Sprite" parent="throwns/thrown"]
+position = Vector2( 120.39, 116.864 )
+rotation = -0.523599
+scale = Vector2( 0.6, 0.6 )
+texture = ExtResource( 2 )
+hframes = 5
+frame = 1
+region_rect = Rect2( 0, 18, 244, 107 )
+
+[node name="Sprite3" type="Sprite" parent="throwns/thrown"]
+position = Vector2( 112.348, 122.235 )
+rotation = -0.349066
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 2 )
+hframes = 5
+frame = 3
+region_rect = Rect2( 0, 18, 244, 107 )
+
+[node name="Sprite4" type="Sprite" parent="throwns/thrown"]
+position = Vector2( 99.5871, 121.558 )
+rotation = -0.523599
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 2 )
+hframes = 5
+frame = 2
+region_rect = Rect2( 0, 18, 244, 107 )
+
+[node name="Sprite5" type="Sprite" parent="throwns/thrown"]
+position = Vector2( 106.891, 108.324 )
+rotation = -0.523599
+scale = Vector2( 0.56185, 0.510718 )
+texture = ExtResource( 2 )
+hframes = 5
+frame = 2
+region_rect = Rect2( 0, 18, 244, 107 )
